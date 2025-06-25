@@ -843,8 +843,8 @@
 /* PENYESUAIAN DARK MODE */
 @media (prefers-color-scheme: dark) {
   .header-scrolled {
-    /* DIUBAH (FINAL): Latar belakang header saat scroll di mode gelap dibuat sama dengan state normal */
-    background: var(--surface);
+    /* PERBAIKAN FINAL: Latar belakang header saat scroll di mode gelap dibuat sama & dipaksa dengan !important */
+    background: var(--surface) !important;
   }
 
   .main-footer {

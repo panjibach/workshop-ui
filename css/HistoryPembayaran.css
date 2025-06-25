@@ -47,6 +47,9 @@
   border-radius: 8px;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  /* DIUBAH: Tambahkan warna background dan teks */
+  background: var(--surface);
+  color: var(--text-primary);
 }
 
 .filter-select:focus,
@@ -144,16 +147,8 @@
   color: #2563eb;
 }
 
-.transaction-status.shipped {
-  background: #d1fae5;
-  color: #059669;
-}
-
-.transaction-status.delivered {
-  background: #d1fae5;
-  color: #059669;
-}
-
+.transaction-status.shipped,
+.transaction-status.delivered,
 .transaction-status.completed {
   background: #d1fae5;
   color: #059669;
@@ -563,6 +558,31 @@
   min-width: 40px;
   height: 40px;
   color: var(--text-secondary);
+}
+
+/* namun ditambahkan di sini untuk kelengkapan. */
+@media (prefers-color-scheme: dark) {
+  .transaction-status.pending {
+    background: rgba(217, 119, 6, 0.2);
+    color: #fcd34d;
+  }
+
+  .transaction-status.processing {
+    background: rgba(37, 99, 235, 0.2);
+    color: #93c5fd;
+  }
+
+  .transaction-status.shipped,
+  .transaction-status.delivered,
+  .transaction-status.completed {
+    background: rgba(5, 150, 105, 0.2);
+    color: #6ee7b7;
+  }
+
+  .transaction-status.cancelled {
+    background: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+  }
 }
 
 @media (max-width: 768px) {

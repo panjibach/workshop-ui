@@ -37,7 +37,7 @@ body {
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: var(--primary-text);
 }
 
 .btn-primary:hover {
@@ -64,7 +64,7 @@ body {
 
 .btn-outline:hover {
   background: var(--accent);
-  color: white;
+  color: var(--primary-text);
   transform: translateY(-2px);
 }
 
@@ -83,8 +83,8 @@ body {
 }
 
 .badge.best-seller {
-  background: #fee2e2;
-  color: #dc2626;
+  background: var(--best-seller-bg);
+  color: var(--best-seller-text);
 }
 
 /* Tags */
@@ -144,7 +144,7 @@ body {
   top: 100px;
   right: 20px;
   background: var(--success);
-  color: white;
+  color: var(--text-light);
   padding: 1rem 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);

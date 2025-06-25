@@ -4,6 +4,7 @@
   --primary: #1e293b;
   --primary-light: #334155;
   --primary-dark: #0f172a;
+  --primary-text: #ffffff; /* Variabel baru untuk teks di atas warna primer */
 
   --accent: #f59e0b;
   --accent-light: #fef3c7;
@@ -13,6 +14,10 @@
   --error: #ef4444;
   --warning: #f59e0b;
   --info: #3b82f6;
+
+  /* Badge Colors */
+  --best-seller-bg: #fee2e2;
+  --best-seller-text: #dc2626;
 
   /* Text Colors */
   --text-primary: #1f2937;
@@ -38,7 +43,11 @@
 
   /* Gradients */
   --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-  --gradient-light: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+  --gradient-light: linear-gradient(
+    135deg,
+    var(--accent-light) 0%,
+    var(--accent) 100%
+  );
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -110,6 +119,15 @@
 /* Dark mode variables (optional) */
 @media (prefers-color-scheme: dark) {
   :root {
+    /* PENYESUAIAN UNTUK MODE GELAP */
+    --primary: var(--accent);
+    --primary-light: var(--accent-dark);
+    --primary-text: #1e293b;
+
+    --best-seller-bg: #991b1b;
+    --best-seller-text: #fecaca;
+
+    /* Variabel yang sudah ada sebelumnya */
     --background: #0f172a;
     --surface: #1e293b;
     --surface-alt: #334155;

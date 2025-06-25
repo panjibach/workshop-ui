@@ -23,7 +23,8 @@ body {
 
 /* Hero Section */
 .product-hero {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface-alt);
   padding: 4rem 0;
   text-align: center;
   margin-top: 80px; /* Space for search section */
@@ -67,7 +68,8 @@ body {
 
 /* Search and Filter Section - Sticky */
 .search-section {
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -153,7 +155,9 @@ body {
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
+  color: var(--text-primary);
   cursor: pointer;
   font-weight: 500;
   font-size: 0.85rem;
@@ -209,7 +213,8 @@ body {
 
 /* Product Card */
 .product-card {
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border-radius: 20px;
   padding: 1.5rem;
   position: relative;
@@ -256,9 +261,10 @@ body {
   left: 1rem;
 }
 
+/* DIUBAH: Menggunakan variabel untuk badge */
 .badge.best-seller {
-  background: #fee2e2;
-  color: #dc2626;
+  background: var(--best-seller-bg, #fee2e2);
+  color: var(--best-seller-text, #dc2626);
   right: 1rem;
 }
 
@@ -414,7 +420,7 @@ body {
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: var(--primary-text, white);
 }
 
 .btn-primary:hover {
@@ -445,7 +451,8 @@ body {
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);

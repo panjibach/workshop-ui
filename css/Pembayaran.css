@@ -207,14 +207,16 @@
 .form-group select.error,
 .form-group textarea.error {
   border-color: var(--error);
-  background: var(--error-light);
+  /* DIUBAH: Menggunakan warna solid transparan untuk background */
+  background: rgba(239, 68, 68, 0.1);
 }
 
 .form-group input.success,
 .form-group select.success,
 .form-group textarea.success {
   border-color: var(--success);
-  background: var(--success-light);
+  /* DIUBAH: Menggunakan warna solid transparan untuk background */
+  background: rgba(16, 185, 129, 0.1);
 }
 
 /* Field Error Messages */

@@ -8,8 +8,9 @@
   height: 32px;
   justify-content: center;
   align-items: center;
-  background: #fff; /* Putih */
-  border: none;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
+  border: 1px solid var(--border); /* Tambahkan border agar terlihat di dark mode */
   padding: 0;
   z-index: 1001;
   border-radius: 6px;
@@ -22,7 +23,8 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: #000; /* Hitam */
+  /* DIUBAH: Menggunakan variabel text-primary */
+  background: var(--text-primary);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
   transform-origin: center;
@@ -30,7 +32,8 @@
 
 /* Hover efek */
 .mobile-menu-btn:hover {
-  background: #f0f0f0; /* Abu terang saat hover */
+  /* DIUBAH: Menggunakan variabel surface-hover */
+  background: var(--surface-hover);
 }
 
 /* Animasi ketika tombol dibuka */
@@ -47,9 +50,9 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Tetap gunakan garis hitam saat tombol open */
+/* Pastikan garis tetap menggunakan warna primer saat open */
 .mobile-menu-btn.open span {
-  background: #000;
+  background: var(--text-primary);
 }
 
 /* Tampilkan tombol di bawah breakpoint tertentu */

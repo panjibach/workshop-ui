@@ -3,7 +3,8 @@
   margin-top: 100px;
   min-height: calc(100vh - 100px);
   padding: 2rem 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  /* DIUBAH: Menggunakan variabel surface agar adaptif */
+  background: var(--surface-alt);
 }
 
 /* Success Animation */
@@ -53,7 +54,8 @@
 }
 
 .order-details-card {
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border-radius: 20px;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -94,7 +96,7 @@
 .order-number .value {
   font-weight: 700;
   color: var(--text-primary);
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .copy-btn {
@@ -400,7 +402,7 @@
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: var(--primary-text, white);
 }
 
 .btn-primary:hover {
@@ -446,20 +448,23 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border-radius: 15px;
   border: 2px solid var(--border);
   transition: all 0.3s ease;
 }
 
+/* DIUBAH: Menggunakan warna solid transparan untuk dark mode */
 .step-item.completed {
   border-color: var(--success);
-  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  background: rgba(16, 185, 129, 0.1);
 }
 
+/* DIUBAH: Menggunakan warna solid transparan untuk dark mode */
 .step-item.active {
   border-color: var(--warning);
-  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  background: rgba(245, 158, 11, 0.1);
   box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
 }
 
@@ -527,7 +532,8 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border-radius: 15px;
   border: 1px solid var(--border);
   transition: all 0.3s ease;

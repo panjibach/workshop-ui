@@ -315,7 +315,7 @@
 
 .share-btn.copy {
   background: var(--primary);
-  color: white;
+  color: var(--primary-text, white);
 }
 
 .share-btn:hover {
@@ -475,5 +475,26 @@ img {
   .warning-box,
   .table-of-contents {
     padding: 1rem;
+  }
+}
+
+/* PENYESUAIAN DARK MODE */
+/* Sebaiknya diletakkan di file CSS root terpusat, */
+/* namun ditambahkan di sini untuk kelengkapan. */
+@media (prefers-color-scheme: dark) {
+  .tips-box {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--info);
+  }
+  .tips-box h4 {
+    color: var(--info);
+  }
+
+  .warning-box {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: var(--warning);
+  }
+  .warning-box h4 {
+    color: var(--warning);
   }
 }

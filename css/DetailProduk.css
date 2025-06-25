@@ -96,9 +96,10 @@
   color: var(--accent-dark);
 }
 
+/* DIUBAH: Menggunakan variabel untuk badge */
 .badge.bestseller {
-  background: #fee2e2;
-  color: #dc2626;
+  background: var(--best-seller-bg, #fee2e2);
+  color: var(--best-seller-text, #dc2626);
 }
 
 .product-title {
@@ -123,7 +124,8 @@
 
 .star {
   font-size: 1.2rem;
-  color: #d1d5db;
+  /* DIUBAH: Menggunakan variabel border */
+  color: var(--border);
 }
 
 .star.filled {
@@ -329,7 +331,7 @@
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: var(--primary-text, white);
   flex: 1;
 }
 
@@ -851,7 +853,8 @@
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);

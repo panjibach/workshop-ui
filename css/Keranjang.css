@@ -33,7 +33,8 @@
 }
 
 .cart-main {
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 4px 20px var(--shadow);
@@ -125,7 +126,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.5rem;
@@ -156,6 +158,7 @@
   border: none;
   background: transparent;
   font-weight: 600;
+  color: var(--text-primary); /* DIUBAH: Tambahkan warna teks */
 }
 
 .quantity-input:focus {
@@ -193,7 +196,8 @@
 }
 
 .remove-item:hover {
-  background: #fee2e2;
+  /* DIUBAH: Menggunakan warna solid transparan untuk dark mode */
+  background: rgba(239, 68, 68, 0.1);
   color: var(--error);
 }
 
@@ -214,7 +218,8 @@
 }
 
 .summary-card {
-  background: white;
+  /* DIUBAH: Menggunakan variabel surface */
+  background: var(--surface);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 4px 20px var(--shadow);
@@ -261,6 +266,9 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 0.9rem;
+  /* DIUBAH: Tambahkan warna background dan teks */
+  background: var(--surface);
+  color: var(--text-primary);
 }
 
 .promo-code input:focus {
@@ -304,7 +312,7 @@
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: var(--primary-text, white);
 }
 
 .btn-primary:hover {

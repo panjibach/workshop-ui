@@ -24,7 +24,7 @@
 
 ## 🛠️ Teknologi yang Digunakan
 
-- **Frontend**: HTML, CSS (UI dibuat dari *scratch*)
+- **Frontend**: HTML, CSS 
 - **Javascript** (opsional, digunakan untuk peningkatan interaksi)
 - **Wireframe Tool**: [Figma / Tool sejenis]
 - **(Opsional)** Backend dan database (Belum digunakan, semua masih dummy)

@@ -3,45 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - TheMar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-     <link rel="icon" type="image/png" href="../image/logo.png">
+    <title>Login - Akun Anda</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/logo.png">
     
     <link rel="stylesheet" href="../css/root.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/auth.css">
+    
 </head>
 <body>
-    <main class="auth-wrapper">
-        <div class="auth-container">
-            <div class="auth-content-left">
-                <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
-                <img src="../image/logo.png" alt="Welcome to TheMar">
-                <h2>Selamat Datang Kembali!</h2>
-                <p>Masuk untuk melanjutkan pengalaman berbelanja Anda dan jelajahi koleksi furniture terbaik kami.</p>
-            </div>
-            <div class="auth-form-right">
-                <a href="LandingPage.html" class="auth-logo">TheMar</a>
-                <h1 class="auth-title">Masuk ke Akun Anda</h1>
-                <p class="auth-subtitle">Silakan masukkan detail Anda untuk mengakses akun Anda.</p>
 
-                <form>
-                    <div class="form-group">
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="auth-left-content">
+                <img src="../image/logo.png" alt="Logo Perusahaan" class="auth-logo-left">
+                <h2>Selamat Datang Kembali</h2>
+                <p>Platform terintegrasi untuk semua kebutuhan Anda.</p>
+            </div>
+            
+            <ul class="background-shapes">
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+            </ul>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-form-wrapper">
+                <div class="auth-header">
+                    <h1>Login Akun</h1>
+                    <p>Silakan masukkan detail Anda untuk melanjutkan.</p>
+                </div>
+
+                <form action="#" method="POST">
+                    <div class="input-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                        <div class="input-with-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.803V4.697l-5.803 3.558Z"/></svg>
+                            <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Kata Sandi</label>
-                        <input type="password" id="password" name="password" placeholder="Masukkan kata sandi Anda" required>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
+                            <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+                        </div>
+                        <a href="#" class="forgot-password">Lupa Password?</a>
                     </div>
-                    <div class="auth-actions">
-                        <button type="submit" class="btn btn-primary">Masuk</button>
-                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
                 </form>
 
-                <p class="auth-link">Belum punya akun? <a href="register.html">Daftar Sekarang</a></p>
+                <div class="divider"><span>atau</span></div>
+
+                <button class="btn btn-secondary btn-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262"><path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.686H130.55v48.448h71.947c-1.45 12.04-9.283 30.175-26.686 30.175-16.124 0-29.194-13.144-29.194-29.193s13.07-29.193 29.194-29.193c9.283 0 14.33 4.18 17.594 7.234l34.836-34.836C209.232 32.73 176.028 12.5 130.55 12.5 73.886 12.5 28.558 54.433 28.558 110.625s45.328 98.125 101.992 98.125c52.004 0 96.69-34.425 96.69-86.254z"/></svg>
+                    Lanjutkan dengan Google
+                </button>
+
+                <p class="auth-footer">
+                    Belum punya akun? <a href="register.html">Daftar di sini</a>
+                </p>
             </div>
         </div>
-    </main>
+    </div>
+
 </body>
 </html>

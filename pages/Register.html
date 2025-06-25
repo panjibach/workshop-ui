@@ -3,54 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - TheMar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../image/logo.png">
+    <title>Daftar - Buat Akun Baru</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/logo.png">
 
     <link rel="stylesheet" href="../css/root.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
-    <main class="auth-wrapper">
-        <div class="auth-container">
-            <div class="auth-content-left">
-                <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
-                <img src="../image/logo.png" alt="Join TheMar Community">
-                <h2>Bergabunglah dengan Komunitas TheMar!</h2>
-                <p>Daftar sekarang untuk mendapatkan akses eksklusif ke penawaran, tips desain, dan koleksi terbaru kami.</p>
-            </div>
-            <div class="auth-form-right">
-                <a href="LandingPage.html" class="auth-logo">TheMar</a>
-                <h1 class="auth-title">Daftar Akun Baru</h1>
-                <p class="auth-subtitle">Buat akun Anda untuk mulai menjelajahi produk kami.</p>
 
-                <form>
-                    <div class="form-group">
-                        <label for="name">Nama Lengkap</label>
-                        <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap Anda" required>
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="auth-left-content">
+                <img src="../image/logo.png" alt="Logo Perusahaan" class="auth-logo-left">
+                <h2>Bergabunglah dengan Kami</h2>
+                <p>Buat akun untuk memulai perjalanan Anda bersama kami.</p>
+            </div>
+            
+            <ul class="background-shapes">
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+            </ul>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-form-wrapper">
+                <div class="auth-header">
+                    <h1>Buat Akun Baru</h1>
+                    <p>Hanya butuh beberapa langkah untuk memulai.</p>
+                </div>
+
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <label for="fullname">Nama Lengkap</label>
+                        <div class="input-with-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"/></svg>
+                            <input type="text" id="fullname" name="fullname" placeholder="Masukkan nama lengkap Anda" required>
+                        </div>
                     </div>
-                    <div class="form-group">
+                    
+                    <div class="input-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                        <div class="input-with-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.803V4.697l-5.803 3.558Z"/></svg>
+                            <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Kata Sandi</label>
-                        <input type="password" id="password" name="password" placeholder="Buat kata sandi" required>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
+                            <input type="password" id="password" name="password" placeholder="Buat password yang kuat" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="confirm-password">Konfirmasi Kata Sandi</label>
-                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Konfirmasi kata sandi Anda" required>
+                    
+                    <div class="input-group">
+                        <label for="confirm-password">Konfirmasi Password</label>
+                        <div class="input-with-icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Ulangi password Anda" required>
+                        </div>
                     </div>
-                    <div class="auth-actions">
-                        <button type="submit" class="btn btn-primary">Daftar</button>
-                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 1rem;">Daftar Sekarang</button>
                 </form>
 
-                <p class="auth-link">Sudah punya akun? <a href="login.html">Masuk</a></p>
+                <p class="auth-footer">
+                    Sudah punya akun? <a href="login.html">Login di sini</a>
+                </p>
             </div>
         </div>
-    </main>
+    </div>
+
 </body>
 </html>

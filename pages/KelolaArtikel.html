@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Artikel - TheMar Admin</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/AdminDashboard.css">
+    <link rel="stylesheet" href="../css/KelolaArtikel.css">
+    <link rel="stylesheet" href="../css/Header-footer.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">TheMar</div>
+                <div class="sidebar-subtitle">Admin Panel</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <a href="AdminDashboard.html" class="nav-item">
+                        <i>📊</i> Dashboard
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Content</div>
+                    <a href="KelolaTransaksi.html" class="nav-item ">
+                        <i>💳</i> Kelola Transaksi
+                    </a>
+                    <a href="KelolaArtikel.html" class="nav-item active">
+                        <i>📝</i> Kelola Artikel
+                    </a>
+                    <a href="KelolaProduk.html" class="nav-item">
+                        <i>🛋️</i> Kelola Produk
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Users</div>
+                    <a href="KelolaPengguna.html" class="nav-item">
+                        <i>👥</i> Kelola Pengguna
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Settings</div>
+                    <a href="Login.html" class="nav-item">
+                        <i>⚙️</i> Login
+                    </a>
+                    <a href="Register.html" class="nav-item">
+                        <i>⚙️</i> Register
+                    </a>
+                    <a href="LandingPage.html" class="nav-item">
+                        <i>🏠</i> Kembali ke Website
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                    <h1 class="topbar-title">Kelola Artikel</h1>
+                </div>
+                
+                <div class="topbar-actions">
+                    <button class="btn btn-primary" onclick="openAddModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Tambah Artikel
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="admin-content">
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">89</div>
+                        <div class="stat-label">Total Artikel</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">72</div>
+                        <div class="stat-label">Artikel Dipublikasi</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Draft</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Menunggu Review</div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="content-filters">
+                    <div class="filters-row">
+                        <input type="text" class="search-input" placeholder="Cari artikel..." id="searchInput">
+                        
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="all">Semua Kategori</option>
+                            <option value="tips">Tips & Trik</option>
+                            <option value="inspirasi">Inspirasi</option>
+                            <option value="panduan">Panduan</option>
+                            <option value="berita">Berita</option>
+                        </select>
+                        
+                        <select class="filter-select" id="statusFilter">
+                            <option value="all">Semua Status</option>
+                            <option value="published">Dipublikasi</option>
+                            <option value="draft">Draft</option>
+                            <option value="review">Menunggu Review</option>
+                        </select>
+                        
+                        <button class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/>
+                            </svg>
+                            Reset Filter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Articles Grid -->
+                <div class="articles-grid">
+                    <!-- Article 1 -->
+                    <div class="article-card">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=300&fit=crop" alt="Tips Memilih Sofa" class="article-image">
+                        <div class="article-content">
+                            <div class="article-header">
+                                <div>
+                                    <h3 class="article-title">Tips Memilih Sofa yang Tepat untuk Ruang Tamu</h3>
+                                    <span class="article-category">Tips & Trik</span>
+                                </div>
+                            </div>
+                            <p class="article-excerpt">Memilih sofa yang tepat untuk ruang tamu bisa menjadi tantangan tersendiri. Artikel ini akan membahas berbagai aspek yang perlu dipertimbangkan seperti ukuran, material, warna, dan gaya yang sesuai dengan interior rumah Anda.</p>
+                            <div class="article-meta">
+                                <span>15 Jan 2024</span>
+                                <span class="status-badge status-published">Dipublikasi</span>
+                            </div>
+                            <div class="article-actions">
+                                <button class="action-btn view" onclick="viewArticle(1)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Lihat
+                                </button>
+                                <button class="action-btn edit" onclick="editArticle(1)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteArticle(1)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="article-card">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=300&fit=crop" alt="Desain Meja Kerja" class="article-image">
+                        <div class="article-content">
+                            <div class="article-header">
+                                <div>
+                                    <h3 class="article-title">Desain Meja Kerja yang Ergonomis untuk WFH</h3>
+                                    <span class="article-category">Inspirasi</span>
+                                </div>
+                            </div>
+                            <p class="article-excerpt">Bekerja dari rumah membutuhkan ruang kerja yang nyaman dan ergonomis. Artikel ini memberikan inspirasi desain meja kerja yang tidak hanya estetis tetapi juga mendukung produktivitas dan kesehatan Anda selama bekerja dari rumah.</p>
+                            <div class="article-meta">
+                                <span>10 Jan 2024</span>
+                                <span class="status-badge status-published">Dipublikasi</span>
+                            </div>
+                            <div class="article-actions">
+                                <button class="action-btn view" onclick="viewArticle(2)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Lihat
+                                </button>
+                                <button class="action-btn edit" onclick="editArticle(2)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteArticle(2)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="article-card">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&h=300&fit=crop" alt="Panduan Perawatan Kursi" class="article-image">
+                        <div class="article-content">
+                            <div class="article-header">
+                                <div>
+                                    <h3 class="article-title">Panduan Lengkap Perawatan Kursi Kayu</h3>
+                                    <span class="article-category">Panduan</span>
+                                </div>
+                            </div>
+                            <p class="article-excerpt">Kursi kayu memerlukan perawatan khusus agar tetap awet dan indah. Artikel ini memberikan panduan lengkap tentang cara merawat kursi kayu, mulai dari pembersihan rutin hingga penanganan noda dan goresan.</p>
+                            <div class="article-meta">
+                                <span>5 Jan 2024</span>
+                                <span class="status-badge status-draft">Draft</span>
+                            </div>
+                            <div class="article-actions">
+                                <button class="action-btn view" onclick="viewArticle(3)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Lihat
+                                </button>
+                                <button class="action-btn edit" onclick="editArticle(3)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteArticle(3)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 4 -->
+                    <div class="article-card">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=600&h=300&fit=crop" alt="Tren Desain Interior" class="article-image">
+                        <div class="article-content">
+                            <div class="article-header">
+                                <div>
+                                    <h3 class="article-title">Tren Desain Interior 2024: Apa yang Perlu Anda Ketahui</h3>
+                                    <span class="article-category">Berita</span>
+                                </div>
+                            </div>
+                            <p class="article-excerpt">Tahun 2024 membawa tren baru dalam dunia desain interior. Artikel ini membahas tren terbaru yang akan mendominasi tahun ini, dari pemilihan warna, material, hingga gaya desain yang akan populer.</p>
+                            <div class="article-meta">
+                                <span>2 Jan 2024</span>
+                                <span class="status-badge status-review">Menunggu Review</span>
+                            </div>
+                            <div class="article-actions">
+                                <button class="action-btn view" onclick="viewArticle(4)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Lihat
+                                </button>
+                                <button class="action-btn edit" onclick="editArticle(4)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteArticle(4)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 5 -->
+                    <div class="article-card">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=600&h=300&fit=crop" alt="Kamar Tidur Minimalis" class="article-image">
+                        <div class="article-content">
+                            <div class="article-header">
+                                <div>
+                                    <h3 class="article-title">Menciptakan Kamar Tidur Minimalis yang Nyaman</h3>
+                                    <span class="article-category">Tips & Trik</span>
+                                </div>
+                            </div>
+                            <p class="article-excerpt">Gaya minimalis terus menjadi pilihan populer untuk kamar tidur. Artikel ini memberikan tips praktis untuk menciptakan kamar tidur minimalis yang tetap nyaman dan fungsional tanpa terkesan kaku atau terlalu sederhana.</p>
+                            <div class="article-meta">
+                                <span>28 Des 2023</span>
+                                <span class="status-badge status-published">Dipublikasi</span>
+                            </div>
+                            <div class="article-actions">
+                                <button class="action-btn view" onclick="viewArticle(5)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Lihat
+                                </button>
+                                <button class="action-btn edit" onclick="editArticle(5)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteArticle(5)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 6 -->
+                    <div class="article-card">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=300&fit=crop" alt="Ruang Makan Modern" class="article-image">
+                        <div class="article-content">
+                            <div class="article-header">
+                                <div>
+                                    <h3 class="article-title">Inspirasi Ruang Makan Modern untuk Rumah Minimalis</h3>
+                                    <span class="article-category">Inspirasi</span>
+                                </div>
+                            </div>
+                            <p class="article-excerpt">Ruang makan adalah salah satu area penting dalam rumah. Artikel ini menyajikan berbagai inspirasi desain ruang makan modern yang cocok untuk rumah minimalis, dengan fokus pada fungsionalitas dan estetika.</p>
+                            <div class="article-meta">
+                                <span>25 Des 2023</span>
+                                <span class="status-badge status-published">Dipublikasi</span>
+                            </div>
+                            <div class="article-actions">
+                                <button class="action-btn view" onclick="viewArticle(6)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Lihat
+                                </button>
+                                <button class="action-btn edit" onclick="editArticle(6)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteArticle(6)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="pagination-btn">‹ Sebelumnya</a>
+                    <a href="#" class="pagination-btn active">1</a>
+                    <a href="#" class="pagination-btn">2</a>
+                    <a href="#" class="pagination-btn">3</a>
+                    <a href="#" class="pagination-btn">Selanjutnya ›</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Article Modal -->
+    <div class="modal" id="articleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Tambah Artikel Baru</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <form id="articleForm">
+                <div class="form-group">
+                    <label class="form-label">Judul Artikel</label>
+                    <input type="text" class="form-input" id="articleTitle" placeholder="Masukkan judul artikel">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Kategori</label>
+                        <select class="form-select" id="articleCategory">
+                            <option value="">Pilih Kategori</option>
+                            <option value="tips">Tips & Trik</option>
+                            <option value="inspirasi">Inspirasi</option>
+                            <option value="panduan">Panduan</option>
+                            <option value="berita">Berita</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Status</label>
+                        <select class="form-select" id="articleStatus">
+                            <option value="draft">Draft</option>
+                            <option value="review">Menunggu Review</option>
+                            <option value="published">Dipublikasi</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Gambar Utama</label>
+                    <input type="file" class="form-input" id="articleImage" accept="image/*">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Ringkasan</label>
+                    <textarea class="form-textarea" id="articleExcerpt" placeholder="Ringkasan singkat artikel" style="min-height: 100px;"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Konten Artikel</label>
+                    <textarea class="form-textarea" id="articleContent" placeholder="Tulis konten artikel di sini..."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Tag</label>
+                        <input type="text" class="form-input" id="articleTags" placeholder="Tag (pisahkan dengan koma)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Penulis</label>
+                        <input type="text" class="form-input" id="articleAuthor" placeholder="Nama penulis">
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan Artikel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/KelolaArtikel.js"></script>
+    <script src="../js/AdminDashboard.js"></script>
+</body>
+</html>

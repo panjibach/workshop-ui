@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Produk - TheMar Admin</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/AdminDashboard.css">
+    <link rel="stylesheet" href="../css/KelolaProduk.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">TheMar</div>
+                <div class="sidebar-subtitle">Admin Panel</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <a href="AdminDashboard.html" class="nav-item">
+                        <i>📊</i> Dashboard
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Content</div>
+                    <a href="KelolaTransaksi.html" class="nav-item ">
+                        <i>💳</i> Kelola Transaksi
+                    </a>
+                    <a href="KelolaArtikel.html" class="nav-item ">
+                        <i>📝</i> Kelola Artikel
+                    </a>
+                    <a href="KelolaProduk.html" class="nav-item active">
+                        <i>🛋️</i> Kelola Produk
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Users</div>
+                    <a href="KelolaPengguna.html" class="nav-item">
+                        <i>👥</i> Kelola Pengguna
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Settings</div>
+                    <a href="Login.html" class="nav-item">
+                        <i>⚙️</i> Login
+                    </a>
+                    <a href="Register.html" class="nav-item">
+                        <i>⚙️</i> Register
+                    </a>
+                    <a href="LandingPage.html" class="nav-item">
+                        <i>🏠</i> Kembali ke Website
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                    <h1 class="topbar-title">Kelola Produk</h1>
+                </div>
+                
+                <div class="topbar-actions">
+                    <button class="btn btn-primary" onclick="openAddModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Tambah Produk
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="admin-content">
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">1,247</div>
+                        <div class="stat-label">Total Produk</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">89</div>
+                        <div class="stat-label">Stok Menipis</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">23</div>
+                        <div class="stat-label">Stok Habis</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">156</div>
+                        <div class="stat-label">Produk Baru</div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="content-filters">
+                    <div class="filters-row">
+                        <input type="text" class="search-input" placeholder="Cari produk..." id="searchInput">
+                        
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="all">Semua Kategori</option>
+                            <option value="sofa">Sofa</option>
+                            <option value="kursi">Kursi</option>
+                            <option value="meja">Meja</option>
+                            <option value="lemari">Lemari</option>
+                            <option value="tempat-tidur">Tempat Tidur</option>
+                        </select>
+                        
+                        <select class="filter-select" id="stockFilter">
+                            <option value="all">Semua Stok</option>
+                            <option value="in-stock">Tersedia</option>
+                            <option value="low-stock">Stok Menipis</option>
+                            <option value="out-of-stock">Stok Habis</option>
+                        </select>
+                        
+                        <button class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12a9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9z"></path>
+                                <path d="M9 12h6"></path>
+                                <path d="M12 9v6"></path>
+                            </svg>
+                            Reset Filter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" alt="Sofa Minimalis" class="product-image">
+                        <div class="product-content">
+                            <div class="product-header">
+                                <div>
+                                    <h3 class="product-title">Sofa Minimalis 3 Seater</h3>
+                                    <span class="product-category">Sofa</span>
+                                </div>
+                            </div>
+                            <div class="product-price">Rp 4.500.000</div>
+                            <div class="product-meta">
+                                <span>SKU: SF001</span>
+                                <span class="stock-status stock-in">Stok: 25</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="action-btn edit" onclick="editProduct(1)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteProduct(1)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&h=200&fit=crop" alt="Meja Kerja" class="product-image">
+                        <div class="product-content">
+                            <div class="product-header">
+                                <div>
+                                    <h3 class="product-title">Meja Kerja Kayu Jati</h3>
+                                    <span class="product-category">Meja</span>
+                                </div>
+                            </div>
+                            <div class="product-price">Rp 2.800.000</div>
+                            <div class="product-meta">
+                                <span>SKU: MJ002</span>
+                                <span class="stock-status stock-low">Stok: 5</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="action-btn edit" onclick="editProduct(2)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteProduct(2)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=300&h=200&fit=crop" alt="Kursi Ergonomis" class="product-image">
+                        <div class="product-content">
+                            <div class="product-header">
+                                <div>
+                                    <h3 class="product-title">Kursi Ergonomis Office</h3>
+                                    <span class="product-category">Kursi</span>
+                                </div>
+                            </div>
+                            <div class="product-price">Rp 1.200.000</div>
+                            <div class="product-meta">
+                                <span>SKU: KR003</span>
+                                <span class="stock-status stock-out">Stok: 0</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="action-btn edit" onclick="editProduct(3)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteProduct(3)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=300&h=200&fit=crop" alt="Lemari Pakaian" class="product-image">
+                        <div class="product-content">
+                            <div class="product-header">
+                                <div>
+                                    <h3 class="product-title">Lemari Pakaian 3 Pintu</h3>
+                                    <span class="product-category">Lemari</span>
+                                </div>
+                            </div>
+                            <div class="product-price">Rp 3.200.000</div>
+                            <div class="product-meta">
+                                <span>SKU: LM004</span>
+                                <span class="stock-status stock-in">Stok: 15</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="action-btn edit" onclick="editProduct(4)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteProduct(4)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=300&h=200&fit=crop" alt="Tempat Tidur" class="product-image">
+                        <div class="product-content">
+                            <div class="product-header">
+                                <div>
+                                    <h3 class="product-title">Tempat Tidur Queen Size</h3>
+                                    <span class="product-category">Tempat Tidur</span>
+                                </div>
+                            </div>
+                            <div class="product-price">Rp 5.800.000</div>
+                            <div class="product-meta">
+                                <span>SKU: TT005</span>
+                                <span class="stock-status stock-in">Stok: 12</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="action-btn edit" onclick="editProduct(5)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteProduct(5)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" alt="Meja Makan" class="product-image">
+                        <div class="product-content">
+                            <div class="product-header">
+                                <div>
+                                    <h3 class="product-title">Meja Makan 6 Kursi</h3>
+                                    <span class="product-category">Meja</span>
+                                </div>
+                            </div>
+                            <div class="product-price">Rp 6.500.000</div>
+                            <div class="product-meta">
+                                <span>SKU: MM006</span>
+                                <span class="stock-status stock-low">Stok: 3</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="action-btn edit" onclick="editProduct(6)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button class="action-btn delete" onclick="deleteProduct(6)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Tambah Produk Baru</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <form id="productForm">
+                <div class="form-group">
+                    <label class="form-label">Nama Produk</label>
+                    <input type="text" class="form-input" id="productName" placeholder="Masukkan nama produk">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Kategori</label>
+                        <select class="form-select" id="productCategory">
+                            <option value="">Pilih Kategori</option>
+                            <option value="sofa">Sofa</option>
+                            <option value="kursi">Kursi</option>
+                            <option value="meja">Meja</option>
+                            <option value="lemari">Lemari</option>
+                            <option value="tempat-tidur">Tempat Tidur</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">SKU</label>
+                        <input type="text" class="form-input" id="productSku" placeholder="Kode produk">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Harga</label>
+                        <input type="number" class="form-input" id="productPrice" placeholder="Harga produk">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Stok</label>
+                        <input type="number" class="form-input" id="productStock" placeholder="Jumlah stok">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Deskripsi</label>
+                    <textarea class="form-textarea" id="productDescription" placeholder="Deskripsi produk"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Berat (kg)</label>
+                        <input type="number" class="form-input" id="productWeight" placeholder="Berat produk">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Dimensi</label>
+                        <input type="text" class="form-input" id="productDimensions" placeholder="P x L x T (cm)">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Material</label>
+                    <input type="text" class="form-input" id="productMaterial" placeholder="Material produk">
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Batal
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Simpan Produk
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/KelolaProduk.js"></script>
+    <script src="../js/AdminDashboard.js"></script>
+</body>
+</html>

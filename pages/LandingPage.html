@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheMar - Modern Furniture | Furniture Berkualitas Tinggi</title>
+    <meta name="description" content="TheMar menyediakan furniture berkualitas tinggi dengan desain modern dan minimalis. Koleksi meja, kursi, sofa, dan lemari terbaik untuk rumah Anda.">
+    <meta name="keywords" content="furniture, meja, kursi, sofa, lemari, minimalis, modern, kayu jati, furniture indonesia">
+    <meta name="author" content="TheMar Furniture">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TheMar - Modern Furniture">
+    <meta property="og:description" content="Furniture berkualitas tinggi dengan desain modern dan minimalis">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=630&fit=crop">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/LandingPage.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Header-footer.css">
+    <link rel="stylesheet" href="../css/header-mobile.css">
+</head>
+<body>
+    <!-- Main Header with Search -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <a href="LandingPage.html" class="logo">TheMar</a>
+            
+            <div class="search-container">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Cari artikel..." id="searchInput">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="LandingPage.html">Home</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li class="has-dropdown">
+                        <a href="ProductPage.html" class="dropdown-toggle">Product <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ProductPage.html">Daftar Product</a></li>
+                            <li><a href="Keranjang.html">Keranjang</a></li>
+                            <li><a href="HistoryPembayaran.html">History Pembayaran</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Artikel.html" >Artikel</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+            
+            <div class="icon-container">
+                <div class="cart-icon" id="cartIcon" onclick="window.location.href='Keranjang.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count" class="cart-count">3</span>
+                </div>
+
+                <div class="account-icon" id="accountIcon" onclick="window.location.href='AdminDashboard.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Product Filter Section -->
+   <!-- Filter Section - Versi Kompak -->
+<section class="filter-section" id="filters">
+    <div class="filter-container">
+        <div class="filter-main-row">
+            <!-- Filter Controls -->
+            <div class="filter-controls-compact">
+                <div class="filter-group-compact">
+                    <span class="filter-label-compact">Kategori:</span>
+                    <select class="filter-select-compact" id="categoryFilter">
+                        <option value="">Semua</option>
+                        <option value="meja">Meja</option>
+                        <option value="kursi">Kursi</option>
+                        <option value="sofa">Sofa</option>
+                        <option value="lemari">Lemari</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group-compact">
+                    <span class="filter-label-compact">Harga:</span>
+                    <select class="filter-select-compact" id="priceFilter">
+                        <option value="">Semua</option>
+                        <option value="0-5000000">< 5jt</option>
+                        <option value="5000000-10000000">5-10jt</option>
+                        <option value="10000000-15000000">10-15jt</option>
+                        <option value="15000000-999999999">> 15jt</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group-compact">
+                    <span class="filter-label-compact">Rating:</span>
+                    <select class="filter-select-compact" id="ratingFilter">
+                        <option value="">Semua</option>
+                        <option value="4.5">4.5+ ⭐</option>
+                        <option value="4.0">4.0+ ⭐</option>
+                        <option value="3.5">3.5+ ⭐</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Category Tags -->
+            <div class="category-tags-compact">
+                <span class="filter-tag-compact active" data-tag="all">Semua</span>
+                <span class="filter-tag-compact" data-tag="minimalis">Minimalis</span>
+                <span class="filter-tag-compact" data-tag="modern">Modern</span>
+                <span class="filter-tag-compact" data-tag="kayu-jati">Kayu Jati</span>
+                <span class="filter-tag-compact" data-tag="ergonomis">Ergonomis</span>
+                <span class="filter-tag-compact" data-tag="multifungsi">Multifungsi</span>
+            </div>
+
+            <!-- Results & Clear -->
+            <div class="results-info-compact">
+                <div class="results-count-compact" id="resultsCount">
+                    <strong>12</strong> produk
+                </div>
+                <button class="clear-filters-compact" id="clearFilters">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                    </svg>
+                    Reset
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Hero Section with Slider -->
+    <section class="intro-section" id="home">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h1>Furniture Berkualitas untuk Rumah Impian</h1>
+                    <p>Temukan koleksi furniture terbaik dengan desain modern dan minimalis. Dibuat dari bahan berkualitas tinggi dengan craftsmanship terbaik untuk melengkapi setiap sudut rumah Anda.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span>Bahan berkualitas tinggi dan tahan lama</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span>Desain modern yang cocok untuk berbagai gaya</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span>Garansi 5 tahun dan layanan purna jual terbaik</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#products" class="cta-button">
+                        Jelajahi Koleksi
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="intro-slider">
+                    <div class="slider-container">
+                        <div class="slider-track" id="slider-track">
+                            <div class="slide">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" alt="Meja Minimalis Modern">
+                                <div class="slide-overlay">
+                                    <h3>Meja Minimalis Modern</h3>
+                                    <p>Desain elegan untuk ruang kerja modern</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&h=400&fit=crop" alt="Kursi Ergonomis Premium">
+                                <div class="slide-overlay">
+                                    <h3>Kursi Ergonomis Premium</h3>
+                                    <p>Kenyamanan maksimal untuk produktivitas</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop" alt="Lemari Multifungsi">
+                                <div class="slide-overlay">
+                                    <h3>Lemari Multifungsi</h3>
+                                    <p>Solusi penyimpanan yang efisien</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&h=400&fit=crop" alt="Sofa Modular Nyaman">
+                                <div class="slide-overlay">
+                                    <h3>Sofa Modular Nyaman</h3>
+                                    <p>Kenyamanan untuk keluarga tercinta</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <button class="slider-btn" id="prevBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="slider-dots" id="slider-dots"></div>
+                        <button class="slider-btn" id="nextBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Tentang TheMar</h2>
+                    <p>
+                        TheMar telah menjadi pionir dalam industri furniture Indonesia selama lebih dari 5 tahun. Kami berkomitmen untuk menghadirkan furniture berkualitas tinggi dengan desain yang memadukan estetika modern dan fungsionalitas optimal.
+                    </p>
+                    <p>
+                        Setiap produk TheMar dibuat dengan perhatian detail yang tinggi, menggunakan bahan-bahan pilihan terbaik, dan dikerjakan oleh craftsman berpengalaman. Kami percaya bahwa furniture bukan hanya sekedar perabot, tetapi investasi jangka panjang untuk kenyamanan hidup Anda.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="about-stat-number">1000+</span>
+                            <span class="about-stat-label">Pelanggan Puas</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-number">500+</span>
+                            <span class="about-stat-label">Produk Terjual</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-number">5</span>
+                            <span class="about-stat-label">Tahun Pengalaman</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-number">50+</span>
+                            <span class="about-stat-label">Kota Terjangkau</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=400&fit=crop" alt="TheMar Workshop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan Kami</h2>
+                <p>Kami menyediakan layanan lengkap untuk memenuhi kebutuhan furniture Anda</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Konsultasi Desain</h3>
+                    <p class="service-description">
+                        Tim desainer berpengalaman kami siap membantu Anda merancang interior rumah yang sesuai dengan kebutuhan dan gaya hidup Anda.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Pengiriman Gratis</h3>
+                    <p class="service-description">
+                        Nikmati layanan pengiriman gratis ke seluruh Indonesia untuk pembelian di atas 5 juta rupiah dengan jaminan barang sampai dengan aman.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Pemasangan Profesional</h3>
+                    <p class="service-description">
+                        Teknisi berpengalaman kami akan memasang furniture Anda dengan rapi dan profesional langsung di rumah Anda.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <path d="M21 12c.552 0 1-.448 1-1V8c0-.552-.448-1-1-1s-1 .448-1 1v3c0 .552.448 1 1 1z"></path>
+                            <path d="M3 12c-.552 0-1-.448-1-1V8c0-.552.448-1 1-1s1 .448 1 1v3c0 .552-.448 1-1 1z"></path>
+                            <path d="M12 21c.552 0 1-.448 1-1v-3c0-.552-.448-1-1-1s-1 .448-1 1v3c0 .552.448 1 1 1z"></path>
+                            <path d="M12 3c-.552 0-1 .448-1 1v3c0 .552.448 1 1 1s1-.448 1-1V4c0-.552-.448-1-1-1z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Garansi 5 Tahun</h3>
+                    <p class="service-description">
+                        Semua produk TheMar dilengkapi dengan garansi 5 tahun untuk memberikan ketenangan pikiran dalam investasi furniture Anda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1000">0</span>
+                    <span class="stat-label">Pelanggan Puas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Produk Terjual</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Tahun Pengalaman</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">Kota Terjangkau</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products section-padding" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Produk Unggulan Kami</h2>
+                <p>Koleksi furniture terbaik untuk melengkapi ruangan Anda dengan kualitas premium dan desain modern</p>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card" data-category="sofa" data-price="8500000" data-rating="4.9" data-tags="minimalis,ruang-tamu,nyaman">
+                    <span class="badge new-arrival">New Arrival</span>
+                    <span class="badge best-seller">Best Seller</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=300&fit=crop" alt="Sofa Minimalis">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Sofa Minimalis</h3>
+                    <div class="product-price">
+                        Rp 8.500.000
+                        <span class="original-price">Rp 9.500.000</span>
+                    </div>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="rating-text">4.9 (127 ulasan)</span>
+                    </div>
+                    <div class="product-tags">
+                        <span class="tag">Minimalis</span>
+                        <span class="tag">Ruang Tamu</span>
+                        <span class="tag">Nyaman</span>
+                    </div>
+                    <div class="product-buttons">
+                        <a class="btn btn-secondary" href="DetailProduk.html">Lihat Detail</a>
+                        <button class="btn btn-primary add-to-cart">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meja" data-price="12500000" data-rating="4.8" data-tags="kayu-jati,ruang-makan,klasik">
+                    <span class="badge new-arrival">New Arrival</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop" alt="Meja Makan Kayu Jati">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Meja Makan Kayu Jati</h3>
+                    <div class="product-price">Rp 12.500.000</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="rating-text">4.8 (89 ulasan)</span>
+                    </div>
+                    <div class="product-tags">
+                        <span class="tag">Kayu Jati</span>
+                        <span class="tag">Ruang Makan</span>
+                        <span class="tag">Klasik</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn btn-secondary">Lihat Detail</button>
+                        <button class="btn btn-primary add-to-cart">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kursi" data-price="3500000" data-rating="4.9" data-tags="ergonomis,kantor,modern">
+                    <span class="badge new-arrival">New Arrival</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=300&fit=crop" alt="Kursi Ergonomis">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Kursi Ergonomis</h3>
+                    <div class="product-price">Rp 3.500.000</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="rating-text">4.9 (156 ulasan)</span>
+                    </div>
+                    <div class="product-tags">
+                        <span class="tag">Ergonomis</span>
+                        <span class="tag">Kantor</span>
+                        <span class="tag">Modern</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn btn-secondary">Lihat Detail</button>
+                        <button class="btn btn-primary add-to-cart">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="lemari" data-price="6500000" data-rating="4.7" data-tags="multifungsi,kamar-tidur,penyimpanan">
+                    <span class="badge new-arrival">New Arrival</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop" alt="Lemari Pakaian Multifungsi">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Lemari Pakaian Multifungsi</h3>
+                    <div class="product-price">Rp 6.500.000</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="rating-text">4.7 (73 ulasan)</span>
+                    </div>
+                    <div class="product-tags">
+                        <span class="tag">Multifungsi</span>
+                        <span class="tag">Kamar Tidur</span>
+                        <span class="tag">Penyimpanan</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn btn-secondary">Lihat Detail</button>
+                        <button class="btn btn-primary add-to-cart">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="rak" data-price="4200000" data-rating="4.8" data-tags="industrial,ruang-kerja,penyimpanan">
+                    <span class="badge new-arrival">New Arrival</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=400&h=300&fit=crop" alt="Rak Buku Industrial">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Rak Buku Industrial</h3>
+                    <div class="product-price">Rp 4.200.000</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="rating-text">4.8 (94 ulasan)</span>
+                    </div>
+                    <div class="product-tags">
+                        <span class="tag">Industrial</span>
+                        <span class="tag">Ruang Kerja</span>
+                        <span class="tag">Penyimpanan</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn btn-secondary">Lihat Detail</button>
+                        <button class="btn btn-primary add-to-cart">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="meja" data-price="7800000" data-rating="4.9" data-tags="marmer,ruang-tamu,mewah">
+                    <span class="badge best-seller">Best Seller</span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=400&h=300&fit=crop" alt="Meja Kopi Marmer">
+                        <div class="product-overlay">
+                            <a href="#" class="quick-view-btn">Quick View</a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Meja Kopi Marmer</h3>
+                    <div class="product-price">
+                        Rp 7.800.000
+                        <span class="original-price">Rp 8.500.000</span>
+                    </div>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="rating-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="rating-text">4.9 (203 ulasan)</span>
+                    </div>
+                    <div class="product-tags">
+                        <span class="tag">Marmer</span>
+                        <span class="tag">Ruang Tamu</span>
+                        <span class="tag">Mewah</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn btn-secondary">Lihat Detail</button>
+                        <button class="btn btn-primary add-to-cart">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Apa Kata Pelanggan Kami</h2>
+                <p>Kepuasan pelanggan adalah prioritas utama kami. Berikut testimoni dari pelanggan yang telah merasakan kualitas produk TheMar.</p>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonial-track">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                            </svg>
+                            <div class="stars">
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                "Kualitas furniture dari TheMar benar-benar luar biasa! Meja minimalis yang saya beli sudah 2 tahun masih seperti baru. Desainnya timeless dan sangat cocok untuk rumah modern. Pelayanan customer service juga sangat responsif dan membantu."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" alt="Sarah Wijaya" class="author-image">
+                                <div class="author-info">
+                                    <div class="author-name">Sarah Wijaya</div>
+                                    <div class="author-role">Interior Designer</div>
+                                    <div class="author-product">Pembeli: Meja Minimalis Modern</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                            </svg>
+                            <div class="stars">
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                "Pelayanan TheMar sangat memuaskan. Dari konsultasi hingga pengiriman semuanya profesional. Kursi ergonomis yang saya beli membuat kerja dari rumah jadi lebih nyaman. Investasi yang sangat worth it!"
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Budi Santoso" class="author-image">
+                                <div class="author-info">
+                                    <div class="author-name">Budi Santoso</div>
+                                    <div class="author-role">Pengusaha</div>
+                                    <div class="author-product">Pembeli: Kursi Ergonomis Premium</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                            </svg>
+                            <div class="stars">
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                "Sebagai arsitek, saya sangat memperhatikan detail dan kualitas. TheMar memenuhi ekspektasi saya dengan furniture berkualitas tinggi dan desain yang elegan. Recommended banget!"
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Maya Putri" class="author-image">
+                                <div class="author-info">
+                                    <div class="author-name">Maya Putri</div>
+                                    <div class="author-role">Arsitek</div>
+                                    <div class="author-product">Pembeli: Sofa Modular Nyaman</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                            </svg>
+                            <div class="stars">
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                                <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                            </div>
+                            <blockquote class="testimonial-quote">
+                                "Investasi terbaik untuk rumah! Lemari multifungsi dari TheMar sangat membantu mengorganisir ruangan. Kualitas kayu jati-nya premium banget dan finishing-nya rapi sekali."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Andi Rahman" class="author-image">
+                                <div class="author-info">
+                                    <div class="author-name">Andi Rahman</div>
+                                    <div class="author-role">Dokter</div>
+                                    <div class="author-product">Pembeli: Lemari Multifungsi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-dots" id="testimonial-dots"></div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles-section" id="articles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Artikel & Tips</h2>
+                <p>Panduan dan inspirasi untuk rumah impian Anda dari para ahli furniture dan interior design</p>
+            </div>
+
+            <div class="articles-grid">
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=200&fit=crop" alt="Tips Memilih Furniture Minimalis" class="article-image">
+                    <div class="article-content">
+                        <span class="article-category">Tips & Panduan</span>
+                        <h3 class="article-title">Tips Memilih Furniture Minimalis untuk Rumah Kecil</h3>
+                        <p class="article-excerpt">
+                            Panduan lengkap memilih furniture yang tepat untuk memaksimalkan ruang terbatas dengan gaya minimalis modern. Pelajari cara mengoptimalkan setiap sudut rumah Anda.
+                        </p>
+                        <div class="article-meta">
+                            <div>
+                                <span class="article-author">Tim Editorial TheMar</span>
+                                <span> • 15 Januari 2024</span>
+                            </div>
+                            <span class="article-read-time">5 menit</span>
+                        </div>
+                        <a href="#" class="read-more-btn">
+                            Baca Selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=200&fit=crop" alt="Tren Furniture 2024" class="article-image">
+                    <div class="article-content">
+                        <span class="article-category">Tren & Inspirasi</span>
+                        <h3 class="article-title">Tren Furniture 2024: Sustainable Living</h3>
+                        <p class="article-excerpt">
+                            Mengapa furniture ramah lingkungan menjadi pilihan utama konsumen modern dan bagaimana TheMar berkontribusi dalam gerakan sustainable living.
+                        </p>
+                        <div class="article-meta">
+                            <div>
+                                <span class="article-author">Dr. Sari Furniture Expert</span>
+                                <span> • 10 Januari 2024</span>
+                            </div>
+                            <span class="article-read-time">7 menit</span>
+                        </div>
+                        <a href="#" class="read-more-btn">
+                            Baca Selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=200&fit=crop" alt="Perawatan Furniture Kayu" class="article-image">
+                    <div class="article-content">
+                        <span class="article-category">Perawatan</span>
+                        <h3 class="article-title">Cara Merawat Furniture Kayu Jati Agar Awet</h3>
+                        <p class="article-excerpt">
+                            Tips dan trik merawat furniture kayu jati agar tetap indah dan tahan lama. Panduan lengkap dari pembersihan hingga perawatan berkala.
+                        </p>
+                        <div class="article-meta">
+                            <div>
+                                <span class="article-author">Ahmad Furniture Care</span>
+                                <span> • 8 Januari 2024</span>
+                            </div>
+                            <span class="article-read-time">6 menit</span>
+                        </div>
+                        <a href="#" class="read-more-btn">
+                            Baca Selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=400&h=200&fit=crop" alt="Interior Design Modern" class="article-image">
+                    <div class="article-content">
+                        <span class="article-category">Interior Design</span>
+                        <h3 class="article-title">Menata Ruang Kerja di Rumah yang Produktif</h3>
+                        <p class="article-excerpt">
+                            Panduan mendesain home office yang nyaman dan produktif dengan pemilihan furniture yang tepat untuk work from home yang optimal.
+                        </p>
+                        <div class="article-meta">
+                            <div>
+                                <span class="article-author">Lisa Interior Designer</span>
+                                <span> • 5 Januari 2024</span>
+                            </div>
+                            <span class="article-read-time">8 menit</span>
+                        </div>
+                        <a href="#" class="read-more-btn">
+                            Baca Selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pertanyaan yang Sering Diajukan</h2>
+                <p>Temukan jawaban untuk pertanyaan umum tentang produk dan layanan TheMar</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Berapa lama garansi produk TheMar?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Semua produk TheMar dilengkapi dengan garansi 5 tahun untuk kerusakan manufaktur dan cacat material. Garansi tidak berlaku untuk kerusakan akibat pemakaian yang tidak wajar atau kecelakaan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah ada layanan pengiriman gratis?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menyediakan layanan pengiriman gratis untuk pembelian di atas Rp 5.000.000 ke seluruh Indonesia. Untuk pembelian di bawah nominal tersebut, biaya pengiriman akan disesuaikan dengan lokasi tujuan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bisakah saya melihat produk secara langsung sebelum membeli?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tentu saja! Kami memiliki showroom di Jakarta yang buka setiap hari Senin-Sabtu pukul 09:00-18:00. Anda juga dapat mengatur janji temu dengan tim konsultan kami untuk mendapatkan pengalaman yang lebih personal.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah tersedia layanan pemasangan?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menyediakan layanan pemasangan profesional oleh teknisi berpengalaman. Layanan ini tersedia dengan biaya tambahan dan dapat dijadwalkan sesuai dengan kebutuhan Anda.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara merawat furniture kayu jati?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width
+                                                <span>Bagaimana cara merawat furniture kayu jati?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Untuk merawat furniture kayu jati, bersihkan secara rutin dengan kain lembab, hindari paparan sinar matahari langsung, dan aplikasikan wood polish setiap 3-6 bulan. Hindari penggunaan pembersih kimia keras yang dapat merusak finishing kayu.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah bisa custom design sesuai kebutuhan?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menerima pesanan custom design sesuai dengan kebutuhan dan preferensi Anda. Tim desainer kami akan bekerja sama dengan Anda untuk menciptakan furniture yang sesuai dengan ruang dan gaya hidup Anda. Silakan hubungi tim konsultan kami untuk informasi lebih lanjut.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana sistem pembayaran yang tersedia?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami menerima berbagai metode pembayaran termasuk transfer bank, kartu kredit, dan cicilan 0% hingga 12 bulan untuk pembelian tertentu. Kami juga bekerja sama dengan berbagai platform pembayaran digital untuk kemudahan transaksi Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Dapatkan Update Terbaru</h3>
+                <p>Berlangganan newsletter kami untuk mendapatkan info produk terbaru, tips furniture, dan penawaran eksklusif</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Masukkan email Anda" required>
+                    <button type="submit">
+                        <span class="button-text">Berlangganan</span>
+                        <span class="loading" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<!-- Ganti bagian footer di LandingPage.html -->
+<footer class="main-footer" id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">TheMar</div>
+                <p class="footer-description">
+                    TheMar adalah destinasi terpercaya untuk furniture berkualitas tinggi dengan desain modern dan minimalis untuk melengkapi ruangan impian Anda.
+                </p>
+                <div class="social-links">
+                    <!-- Social links sama seperti sebelumnya -->
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-heading">Navigasi</h3>
+                <ul class="footer-links">
+                    <!-- Links sama seperti sebelumnya -->
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-heading">Kategori Produk</h3>
+                <ul class="footer-links">
+                    <!-- Links sama seperti sebelumnya -->
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-heading">Kontak Kami</h3>
+                <ul class="contact-info">
+                    <!-- Contact info sama seperti sebelumnya -->
+                </ul>
+                
+                <!-- Tambahkan newsletter seperti ProductPage -->
+                <div class="newsletter">
+                    <h4>Berlangganan Newsletter</h4>
+                    <form class="newsletter-form" id="newsletter-form-footer">
+                        <input type="email" placeholder="Email Anda" required>
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 TheMar. Semua hak cipta dilindungi.</p>
+            <div class="payment-methods">
+                <span>Metode Pembayaran:</span>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="payment-method">VISA</span>
+                    <span class="payment-method">MasterCard</span>
+                    <span class="payment-method">BCA</span>
+                    <span class="payment-method">OVO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-button" id="chatButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h4>Customer Support</h4>
+                <button class="chat-close" id="chatClose">&times;</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot">
+                    Halo! Selamat datang di TheMar. Ada yang bisa saya bantu hari ini?
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Ketik pesan Anda...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="../js/LandingPage.js"></script>
+    <script src="../js/Header-footer.js"></script>
+    <script src="../js/header-mobile.js"></script>
+</body>
+
+</html>

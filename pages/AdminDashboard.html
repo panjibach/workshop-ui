@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - TheMar (Improved)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/AdminDashboard.css">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <a href="#" class="sidebar-logo">TheMar</a>
+                <div class="sidebar-subtitle">Admin Panel</div>
+                <!-- Close button will be added by JavaScript -->
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <a href="#dashboard" class="nav-item active">
+                        <i>📊</i> Dashboard
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Content</div>
+                    <a href="KelolaTransaksi.html" class="nav-item">
+                        <i>💳</i> Kelola Transaksi
+                    </a>
+                    <a href="KelolaArtikel.html" class="nav-item">
+                        <i>📝</i> Kelola Artikel
+                    </a>
+                    <a href="KelolaProduk.html" class="nav-item">
+                        <i>🛋️</i> Kelola Produk
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Users</div>
+                    <a href="KelolaPengguna.html" class="nav-item">
+                        <i>👥</i> Kelola Pengguna
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Settings</div>
+                    <a href="Login.html" class="nav-item">
+                        <i>⚙️</i> Login
+                    </a>
+                    <a href="Register.html" class="nav-item">
+                        <i>⚙️</i> Register
+                    </a>
+                    <a href="LandingPage.html" class="nav-item">
+                        <i>🏠</i> Kembali ke Website
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <div class="topbar-left">
+                    <button class="mobile-menu-btn" aria-label="Toggle sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="topbar-right">
+                    <button class="notification-btn" aria-label="Notifications">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="admin-profile">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Admin" class="profile-avatar">
+                        <div class="profile-info">
+                            <h4>Admin User</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="admin-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-title">Total Produk</div>
+                                <div class="stat-value">156</div>
+                            </div>
+                            <div class="stat-icon primary">🛋️</div>
+                        </div>
+                        <div class="stat-change positive">
+                            <span>↗️</span>
+                            <span>+12% dari bulan lalu</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-title">Total Artikel</div>
+                                <div class="stat-value">89</div>
+                            </div>
+                            <div class="stat-icon success">📝</div>
+                        </div>
+                        <div class="stat-change positive">
+                            <span>↗️</span>
+                            <span>+8% dari bulan lalu</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-title">Total Pengguna</div>
+                                <div class="stat-value">1,234</div>
+                            </div>
+                            <div class="stat-icon info">👥</div>
+                        </div>
+                        <div class="stat-change positive">
+                            <span>↗️</span>
+                            <span>+15% dari bulan lalu</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div>
+                                <div class="stat-title">Pesanan Hari Ini</div>
+                                <div class="stat-value">23</div>
+                            </div>
+                            <div class="stat-icon warning">📦</div>
+                        </div>
+                        <div class="stat-change negative">
+                            <span>↘️</span>
+                            <span>-5% dari kemarin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Penjualan Bulanan</h3>
+                            <select class="chart-filter">
+                                <option>6 Bulan Terakhir</option>
+                                <option>12 Bulan Terakhir</option>
+                            </select>
+                        </div>
+                        <div class="chart-placeholder">
+                            📈 Chart akan ditampilkan di sini
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Kategori Terpopuler</h3>
+                        </div>
+                        <div class="chart-placeholder">
+                            🥧 Pie Chart akan ditampilkan di sini
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3 class="activity-title">Aktivitas Terbaru</h3>
+                            <a href="#" class="view-all-btn">Lihat Semua</a>
+                        </div>
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <img src="/placeholder.svg?height=40&width=40" alt="User" class="activity-avatar">
+                                <div class="activity-content">
+                                    <div class="activity-text">Sarah menambahkan artikel baru "Tips Memilih Sofa"</div>
+                                    <div class="activity-time">2 jam yang lalu</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <img src="/placeholder.svg?height=40&width=40" alt="User" class="activity-avatar">
+                                <div class="activity-content">
+                                    <div class="activity-text">Admin memperbarui produk "Kursi Minimalis Modern"</div>
+                                    <div class="activity-time">4 jam yang lalu</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <img src="/placeholder.svg?height=40&width=40" alt="User" class="activity-avatar">
+                                <div class="activity-content">
+                                    <div class="activity-text">John mendaftar sebagai pengguna baru</div>
+                                    <div class="activity-time">6 jam yang lalu</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <img src="/placeholder.svg?height=40&width=40" alt="User" class="activity-avatar">
+                                <div class="activity-content">
+                                    <div class="activity-text">Lisa menyelesaikan pesanan #ORD-001234</div>
+                                    <div class="activity-time">8 jam yang lalu</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-header">
+                            <h3 class="activity-title">Pesanan Terbaru</h3>
+                            <a href="#" class="view-all-btn">Lihat Semua</a>
+                        </div>
+                        <div class="order-list">
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>#ORD-001245</h4>
+                                    <span>Andi Rahman - Rp 2,500,000</span>
+                                </div>
+                                <span class="order-status pending">Pending</span>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>#ORD-001244</h4>
+                                    <span>Sari Dewi - Rp 1,800,000</span>
+                                </div>
+                                <span class="order-status processing">Processing</span>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>#ORD-001243</h4>
+                                    <span>Budi Santoso - Rp 3,200,000</span>
+                                </div>
+                                <span class="order-status completed">Completed</span>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <h4>#ORD-001242</h4>
+                                    <span>Maya Putri - Rp 1,500,000</span>
+                                </div>
+                                <span class="order-status completed">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Demo Info
+    <div style="position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; padding: 1rem; border-radius: 10px; font-size: 0.9rem; max-width: 300px; z-index: 10000;">
+        <strong>🎯 Sidebar Features:</strong><br>
+        • Click hamburger menu to toggle<br>
+        • Responsive mobile design<br>
+        • Overlay click to close<br>
+        • Keyboard shortcuts (Esc, Ctrl+B)<br>
+        • Smooth animations
+    </div> -->
+
+    <script src="../js/AdminDashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Transaksi - TheMar Admin</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/AdminDashboard.css">
+    <link rel="stylesheet" href="../css/KelolaTransaksi.css">
+    
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">TheMar</div>
+                <div class="sidebar-subtitle">Admin Panel</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <a href="AdminDashboard.html" class="nav-item">
+                        <i>📊</i> Dashboard
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Content</div>
+                         <a href="KelolaTransaksi.html" class="nav-item active">
+                        <i>💳</i> Kelola Transaksi
+                    </a>
+                    <a href="KelolaArtikel.html" class="nav-item">
+                        <i>📝</i> Kelola Artikel
+                    </a>
+                    <a href="KelolaProduk.html" class="nav-item">
+                        <i>🛋️</i> Kelola Produk
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Users</div>
+                    <a href="KelolaPengguna.html" class="nav-item">
+                        <i>👥</i> Kelola Pengguna
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Settings</div>
+                    <a href="Login.html" class="nav-item">
+                        <i>⚙️</i> Login
+                    </a>
+                    <a href="Register.html" class="nav-item">
+                        <i>⚙️</i> Register
+                    </a>
+                    <a href="LandingPage.html" class="nav-item">
+                        <i>🏠</i> Kembali ke Website
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+                    <h1 class="topbar-title">Kelola Transaksi</h1>
+                </div>
+                
+                <div class="topbar-actions">
+                    <button class="btn btn-secondary" onclick="exportTransactions()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Export Data
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="admin-content">
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">Total Transaksi</div>
+                            <div class="stat-icon primary">💳</div>
+                        </div>
+                        <div class="stat-value">1,247</div>
+                        <div class="stat-change positive">+12% dari bulan lalu</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">Pendapatan</div>
+                            <div class="stat-icon success">💰</div>
+                        </div>
+                        <div class="stat-value">Rp 45.2M</div>
+                        <div class="stat-change positive">+8.5% dari bulan lalu</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">Menunggu Proses</div>
+                            <div class="stat-icon warning">⏳</div>
+                        </div>
+                        <div class="stat-value">23</div>
+                        <div class="stat-change negative">-5% dari kemarin</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">Selesai Hari Ini</div>
+                            <div class="stat-icon info">✅</div>
+                        </div>
+                        <div class="stat-value">89</div>
+                        <div class="stat-change positive">+15% dari kemarin</div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="content-filters">
+                    <div class="filters-row">
+                        <input type="text" class="search-input" placeholder="Cari berdasarkan ID transaksi, nama customer..." id="searchInput">
+                        
+                        <select class="filter-select" id="statusFilter">
+                            <option value="all">Semua Status</option>
+                            <option value="pending">Menunggu Pembayaran</option>
+                            <option value="processing">Diproses</option>
+                            <option value="shipped">Dikirim</option>
+                            <option value="delivered">Selesai</option>
+                            <option value="cancelled">Dibatalkan</option>
+                            <option value="refunded">Dikembalikan</option>
+                        </select>
+                        
+                        <select class="filter-select" id="paymentFilter">
+                            <option value="all">Semua Pembayaran</option>
+                            <option value="credit_card">Kartu Kredit</option>
+                            <option value="bank_transfer">Transfer Bank</option>
+                            <option value="ewallet">E-Wallet</option>
+                            <option value="cod">COD</option>
+                        </select>
+                        
+                        <input type="date" class="filter-select" id="dateFilter">
+                        
+                        <button class="btn btn-secondary" onclick="resetFilters()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/>
+                            </svg>
+                            Reset Filter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Transactions Table -->
+                <div class="transactions-table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">Daftar Transaksi</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-ghost" onclick="refreshTable()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/>
+                                </svg>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>ID Transaksi</th>
+                                    <th>Customer</th>
+                                    <th>Produk</th>
+                                    <th>Total</th>
+                                    <th>Pembayaran</th>
+                                    <th>Status</th>
+                                    <th>Tanggal</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-id">#TXN-2024-001</div>
+                                    </td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <div class="customer-avatar">
+                                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Customer">
+                                            </div>
+                                            <div class="customer-details">
+                                                <h4>Ahmad Rizki</h4>
+                                                <span>ahmad.rizki@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-summary">
+                                            <span class="product-count">3 produk</span>
+                                            <div class="product-preview">
+                                                <small>Sofa Minimalis, Meja Kerja...</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount">Rp 4.250.000</div>
+                                    </td>
+                                    <td>
+                                        <div class="payment-method">
+                                            <span class="payment-icon">💳</span>
+                                            <span>Kartu Kredit</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge status-delivered">Selesai</span>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <div>15 Jan 2024</div>
+                                            <small>14:30</small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <button class="action-btn view" onclick="viewTransaction('TXN-2024-001')" title="Lihat Detail">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <button class="action-btn edit" onclick="editTransaction('TXN-2024-001')" title="Edit Status">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="action-btn delete" onclick="deleteTransaction('TXN-2024-001')" title="Hapus">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M3 6h18"></path>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="transaction-id">#TXN-2024-002</div>
+                                    </td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <div class="customer-avatar">
+                                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Customer">
+                                            </div>
+                                            <div class="customer-details">
+                                                <h4>Sari Dewi</h4>
+                                                <span>sari.dewi@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-summary">
+                                            <span class="product-count">1 produk</span>
+                                            <div class="product-preview">
+                                                <small>Kursi Ergonomis</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount">Rp 1.850.000</div>
+                                    </td>
+                                    <td>
+                                        <div class="payment-method">
+                                            <span class="payment-icon">🏦</span>
+                                            <span>Transfer Bank</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge status-shipped">Dikirim</span>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <div>14 Jan 2024</div>
+                                            <small>09:15</small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <button class="action-btn view" onclick="viewTransaction('TXN-2024-002')" title="Lihat Detail">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <button class="action-btn edit" onclick="editTransaction('TXN-2024-002')" title="Edit Status">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="action-btn delete" onclick="deleteTransaction('TXN-2024-002')" title="Hapus">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M3 6h18"></path>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="transaction-id">#TXN-2024-003</div>
+                                    </td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <div class="customer-avatar">
+                                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Customer">
+                                            </div>
+                                            <div class="customer-details">
+                                                <h4>Budi Santoso</h4>
+                                                <span>budi.santoso@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-summary">
+                                            <span class="product-count">2 produk</span>
+                                            <div class="product-preview">
+                                                <small>Lemari Pakaian, Nakas</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount">Rp 3.100.000</div>
+                                    </td>
+                                    <td>
+                                        <div class="payment-method">
+                                            <span class="payment-icon">📱</span>
+                                            <span>E-Wallet</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge status-processing">Diproses</span>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <div>13 Jan 2024</div>
+                                            <small>16:45</small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <button class="action-btn view" onclick="viewTransaction('TXN-2024-003')" title="Lihat Detail">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <button class="action-btn edit" onclick="editTransaction('TXN-2024-003')" title="Edit Status">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="action-btn delete" onclick="deleteTransaction('TXN-2024-003')" title="Hapus">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M3 6h18"></path>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="transaction-id">#TXN-2024-004</div>
+                                    </td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <div class="customer-avatar">
+                                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="Customer">
+                                            </div>
+                                            <div class="customer-details">
+                                                <h4>Maya Putri</h4>
+                                                <span>maya.putri@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-summary">
+                                            <span class="product-count">1 produk</span>
+                                            <div class="product-preview">
+                                                <small>Meja Makan Set</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount">Rp 2.750.000</div>
+                                    </td>
+                                    <td>
+                                        <div class="payment-method">
+                                            <span class="payment-icon">🚚</span>
+                                            <span>COD</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge status-pending">Menunggu</span>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <div>12 Jan 2024</div>
+                                            <small>11:20</small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <button class="action-btn view" onclick="viewTransaction('TXN-2024-004')" title="Lihat Detail">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <button class="action-btn edit" onclick="editTransaction('TXN-2024-004')" title="Edit Status">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="action-btn delete" onclick="deleteTransaction('TXN-2024-004')" title="Hapus">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M3 6h18"></path>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="pagination-btn">‹ Sebelumnya</a>
+                    <a href="#" class="pagination-btn active">1</a>
+                    <a href="#" class="pagination-btn">2</a>
+                    <a href="#" class="pagination-btn">3</a>
+                    <a href="#" class="pagination-btn">Selanjutnya ›</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Transaction Detail Modal -->
+    <div class="modal" id="transactionModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Detail Transaksi #TXN-2024-001</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <div class="transaction-detail">
+                <!-- Customer Info -->
+                <div class="detail-section">
+                    <h3>Informasi Customer</h3>
+                    <div class="customer-detail">
+                        <div class="customer-avatar-large">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Customer">
+                        </div>
+                        <div class="customer-info-detail">
+                            <h4>Ahmad Rizki</h4>
+                            <p>ahmad.rizki@email.com</p>
+                            <p>+62 812-3456-7890</p>
+                            <p>Jl. Sudirman No. 123, Jakarta Selatan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="detail-section">
+                    <h3>Produk yang Dipesan</h3>
+                    <div class="order-items">
+                        <div class="order-item">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=80&h=80&fit=crop" alt="Sofa">
+                            <div class="item-info">
+                                <h4>Sofa Minimalis 3 Seater</h4>
+                                <p>Warna: Abu-abu, Material: Fabric</p>
+                                <div class="item-price">
+                                    <span class="quantity">2x</span>
+                                    <span class="price">Rp 1.500.000</span>
+                                </div>
+                            </div>
+                            <div class="item-total">Rp 3.000.000</div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=80&h=80&fit=crop" alt="Meja">
+                            <div class="item-info">
+                                <h4>Meja Kerja Ergonomis</h4>
+                                <p>Warna: Coklat, Material: Kayu Jati</p>
+                                <div class="item-price">
+                                    <span class="quantity">1x</span>
+                                    <span class="price">Rp 1.250.000</span>
+                                </div>
+                            </div>
+                            <div class="item-total">Rp 1.250.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment & Shipping -->
+                <div class="detail-sections-row">
+                    <div class="detail-section">
+                        <h3>Informasi Pembayaran</h3>
+                        <div class="payment-detail">
+                            <div class="detail-row">
+                                <span>Metode Pembayaran:</span>
+                                <span>Kartu Kredit</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Status Pembayaran:</span>
+                                <span class="status-paid">Lunas</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Tanggal Pembayaran:</span>
+                                <span>15 Jan 2024, 14:30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Informasi Pengiriman</h3>
+                        <div class="shipping-detail">
+                            <div class="detail-row">
+                                <span>Alamat Pengiriman:</span>
+                                <span>Jl. Sudirman No. 123, Jakarta Selatan</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Kurir:</span>
+                                <span>JNE Express</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>No. Resi:</span>
+                                <span>JNE123456789</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="detail-section">
+                    <h3>Ringkasan Pesanan</h3>
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span>Rp 4.250.000</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Ongkos Kirim:</span>
+                            <span>Rp 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Diskon:</span>
+                            <span>-Rp 0</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span>Rp 4.250.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Update -->
+                <div class="detail-section">
+                    <h3>Update Status</h3>
+                    <div class="status-update">
+                        <select class="form-select" id="statusUpdate">
+                            <option value="pending">Menunggu Pembayaran</option>
+                            <option value="processing">Diproses</option>
+                            <option value="shipped">Dikirim</option>
+                            <option value="delivered" selected>Selesai</option>
+                            <option value="cancelled">Dibatalkan</option>
+                            <option value="refunded">Dikembalikan</option>
+                        </select>
+                        <button class="btn btn-primary" onclick="updateStatus()">Update Status</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">Tutup</button>
+                <button type="button" class="btn btn-primary" onclick="printInvoice()">Cetak Invoice</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/KelolaTransaksi.js"></script>
+    <script src="../js/AdminDashboard.js"></script>
+</body>
+</html>

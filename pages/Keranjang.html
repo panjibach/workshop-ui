@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja - TheMar</title>
+    <meta name="description" content="Keranjang belanja TheMar - Review produk furniture pilihan Anda">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/Keranjang.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Header-footer.css">
+
+</head>
+<body>
+    <!-- Main Header -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Tombol menu mobile di paling kiri -->
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Logo setelah tombol menu -->
+            <a href="LandingPage.html" class="logo">TheMar</a>
+            
+            <!-- Kolom pencarian setelah logo -->
+            <div class="search-container">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Cari artikel..." id="searchInput">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            
+            <!-- Navigasi utama (akan disembunyikan di mobile oleh CSS) -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="LandingPage.html">Home</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li class="has-dropdown">
+                        <a href="ProductPage.html" class="dropdown-toggle">Product <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ProductPage.html">Daftar Product</a></li>
+                            <li><a href="Keranjang.html">Keranjang</a></li>
+                            <li><a href="HistoryPembayaran.html">History Pembayaran</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Artikel.html" >Artikel</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Ikon keranjang dan akun di paling kanan -->
+            <div class="icon-container">
+                <div class="cart-icon" id="cartIcon" onclick="window.location.href='Keranjang.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count" class="cart-count">3</span>
+                </div>
+
+                <div class="account-icon" id="accountIcon" onclick="window.location.href='AdminDashboard.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Cart Content -->
+    <div class="cart-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="LandingPage.html">Home</a>
+            <span>›</span>
+            <a href="ProductPage.html">Product</a>
+            <span>›</span>
+            <span>Keranjang</span>
+        </div>
+
+        <div class="cart-content" id="cartContent">
+            <div class="cart-main">
+                <div class="cart-header">
+                    <h1>Keranjang Belanja</h1>
+                    <span class="item-count" id="itemCount">3 item</span>
+                </div>
+
+                <!-- Cart Items -->
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item fade-in" data-id="1" data-price="6500000">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=120&h=120&fit=crop" alt="Lemari Pakaian Multifungsi">
+                        </div>
+                        <div class="item-details">
+                            <h3 class="item-title">Lemari Pakaian Multifungsi</h3>
+                            <p class="item-description">Lemari dengan desain modern dan multifungsi</p>
+                            <div class="item-tags">
+                                <span class="tag">Multifungsi</span>
+                                <span class="tag">Kamar Tidur</span>
+                            </div>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="quantity-btn decrease" onclick="updateQuantity(1, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="99" onchange="updateQuantityInput(1, this.value)">
+                            <button class="quantity-btn increase" onclick="updateQuantity(1, 1)">+</button>
+                        </div>
+                        <div class="item-price">
+                            <span class="current-price">Rp 6.500.000</span>
+                        </div>
+                        <button class="remove-item" onclick="removeItem(1)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3,6 5,6 21,6"></polyline>
+                                <path d="m19,6v14a2,2 0,0 1,-2,2H7a2,2 0,0 1,-2,-2V6m3,0V4a2,2 0,0 1,2,-2h4a2,2 0,0 1,2,2v2"></path>
+                                <line x1="10" y1="11" x2="10" y2="17"></line>
+                                <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item fade-in" data-id="2" data-price="7800000">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=120&h=120&fit=crop" alt="Meja Kopi Marmer">
+                        </div>
+                        <div class="item-details">
+                            <h3 class="item-title">Meja Kopi Marmer</h3>
+                            <p class="item-description">Meja kopi dengan permukaan marmer premium</p>
+                            <div class="item-tags">
+                                <span class="tag">Marmer</span>
+                                <span class="tag">Ruang Tamu</span>
+                            </div>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="quantity-btn decrease" onclick="updateQuantity(2, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="99" onchange="updateQuantityInput(2, this.value)">
+                            <button class="quantity-btn increase" onclick="updateQuantity(2, 1)">+</button>
+                        </div>
+                        <div class="item-price">
+                            <span class="current-price">Rp 7.800.000</span>
+                            <span class="original-price">Rp 8.500.000</span>
+                        </div>
+                        <button class="remove-item" onclick="removeItem(2)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3,6 5,6 21,6"></polyline>
+                                <path d="m19,6v14a2,2 0,0 1,-2,2H7a2,2 0,0 1,-2,-2V6m3,0V4a2,2 0,0 1,2,-2h4a2,2 0,0 1,2,2v2"></path>
+                                <line x1="10" y1="11" x2="10" y2="17"></line>
+                                <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="cart-item fade-in" data-id="3" data-price="3500000">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=120&h=120&fit=crop" alt="Kursi Ergonomis Premium">
+                        </div>
+                        <div class="item-details">
+                            <h3 class="item-title">Kursi Ergonomis Premium</h3>
+                            <p class="item-description">Kursi kantor dengan desain ergonomis</p>
+                            <div class="item-tags">
+                                <span class="tag">Ergonomis</span>
+                                <span class="tag">Kantor</span>
+                            </div>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="quantity-btn decrease" onclick="updateQuantity(3, -1)">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="99" onchange="updateQuantityInput(3, this.value)">
+                            <button class="quantity-btn increase" onclick="updateQuantity(3, 1)">+</button>
+                        </div>
+                        <div class="item-price">
+                            <span class="current-price">Rp 3.500.000</span>
+                        </div>
+                        <button class="remove-item" onclick="removeItem(3)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3,6 5,6 21,6"></polyline>
+                                <path d="m19,6v14a2,2 0,0 1,-2,2H7a2,2 0,0 1,-2,-2V6m3,0V4a2,2 0,0 1,2,-2h4a2,2 0,0 1,2,2v2"></path>
+                                <line x1="10" y1="11" x2="10" y2="17"></line>
+                                <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cart Actions -->
+                <div class="cart-actions">
+                    <button class="btn btn-secondary" onclick="window.location.href='ProductPage.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12,19 5,12 12,5"></polyline>
+                        </svg>
+                        Lanjut Belanja
+                    </button>
+                    <button class="btn btn-outline" onclick="clearCart()">Kosongkan Keranjang</button>
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <div class="summary-card">
+                    <h3>Ringkasan Pesanan</h3>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">Rp 17.800.000</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Diskon</span>
+                        <span class="discount" id="discount">-Rp 700.000</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Ongkos Kirim</span>
+                        <span id="shipping">Gratis</span>
+                    </div>
+                    
+                    <div class="summary-divider"></div>
+                    
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">Rp 17.100.000</span>
+                    </div>
+                    
+                    <div class="promo-code">
+                        <input type="text" placeholder="Kode promo" id="promoInput">
+                        <button class="btn btn-outline" onclick="applyPromo()">Terapkan</button>
+                    </div>
+                    
+                    <button class="btn btn-primary checkout-btn" onclick="window.location.href='Pembayaran.html'">
+                        Lanjut ke Pembayaran
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                    
+                    <div class="security-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span>Pembayaran aman dan terpercaya</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty Cart State -->
+        <div class="empty-cart" id="emptyCart" style="display: none;">
+            <div class="empty-cart-content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <h2>Keranjang Anda Kosong</h2>
+                <p>Belum ada produk yang ditambahkan ke keranjang. Yuk, mulai belanja furniture impian Anda!</p>
+                <button class="btn btn-primary" onclick="window.location.href='product-page.html'">
+                    Mulai Belanja
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">TheMar</div>
+                    <p class="footer-description">
+                        TheMar adalah destinasi terpercaya untuk furniture berkualitas tinggi dengan desain modern dan minimalis untuk melengkapi ruangan impian Anda.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="LandingPage.html">Home</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="ProductPage.html">Produk</a></li>
+                        <li><a href="Artikel.html">Artikel</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kategori Produk</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Ruang Tamu</a></li>
+                        <li><a href="#">Ruang Makan</a></li>
+                        <li><a href="#">Kamar Tidur</a></li>
+                        <li><a href="#">Ruang Kerja</a></li>
+                        <li><a href="#">Dapur</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kontak Kami</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Jl. Merdeka No. 123, Jakarta Pusat 10110</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+62 21 1234 5678</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@themar.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h4>Berlangganan Newsletter</h4>
+                        <form class="newsletter-form" id="newsletter-form-footer">
+                            <input type="email" placeholder="Email Anda" required>
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TheMar. Semua hak cipta dilindungi.</p>
+                <div class="payment-methods">
+                    <span>Metode Pembayaran:</span>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span class="payment-method">VISA</span>
+                        <span class="payment-method">MasterCard</span>
+                        <span class="payment-method">BCA</span>
+                        <span class="payment-method">OVO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/Keranjang.js"></script>
+    <script src="../js/Header-footer.js"></script>
+</body>
+</body>
+</html>

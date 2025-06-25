@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel & Tips - TheMar | Panduan Furniture & Interior Design</title>
+    <meta name="description" content="Temukan artikel, tips, dan panduan terbaru tentang furniture, interior design, dan dekorasi rumah dari para ahli TheMar.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Header-footer.css">
+    <link rel="stylesheet" href="../css/Artikel.css">
+</head>
+<body>
+    <!-- Main Header -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Tombol menu mobile di paling kiri -->
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Logo setelah tombol menu -->
+            <a href="LandingPage.html" class="logo">TheMar</a>
+            
+            <!-- Kolom pencarian setelah logo -->
+            <div class="search-container">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Cari artikel..." id="searchInput">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            
+            <!-- Navigasi utama (akan disembunyikan di mobile oleh CSS) -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="LandingPage.html">Home</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li class="has-dropdown">
+                        <a href="ProductPage.html" class="dropdown-toggle">Product <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ProductPage.html">Daftar Product</a></li>
+                            <li><a href="Keranjang.html">Keranjang</a></li>
+                            <li><a href="HistoryPembayaran.html">History Pembayaran</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Artikel.html" >Artikel</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Ikon keranjang dan akun di paling kanan -->
+            <div class="icon-container">
+                <div class="cart-icon" id="cartIcon" onclick="window.location.href='Keranjang.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count" class="cart-count">3</span>
+                </div>
+
+                <div class="account-icon" id="accountIcon" onclick="window.location.href='AdminDashboard.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Hero Section -->
+    <section class="articles-hero">
+        <h1>Artikel & Tips</h1>
+        <p>Panduan lengkap furniture, interior design, dan tips dekorasi rumah dari para ahli TheMar</p>
+    </section>
+
+    <!-- Articles Container -->
+    <div class="articles-container">
+        <!-- Filter and Sort Section -->
+        <section class="articles-filter-sort">
+            <div class="filter-group">
+                <label for="categorySelect">Kategori:</label>
+                <select id="categorySelect">
+                    <option value="all">Semua Kategori</option>
+                    <option value="tips-panduan">Tips & Panduan</option>
+                    <option value="tren-inspirasi">Tren & Inspirasi</option>
+                    <option value="perawatan">Perawatan</option>
+                    <option value="interior-design">Interior Design</option>
+                    <option value="diy">DIY</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sortSelect">Urutkan Berdasarkan:</label>
+                <select id="sortSelect">
+                    <option value="newest">Terbaru</option>
+                    <option value="oldest">Terlama</option>
+                    <option value="popular">Terpopuler</option>
+                </select>
+            </div>
+            <div class="results-info">
+                <span id="resultsInfo">0 artikel</span>
+            </div>
+        </section>
+        <!-- End Filter and Sort Section -->
+
+        <!-- Featured Article -->
+        <section class="featured-article">
+            <h2 class="featured-title">Artikel Pilihan</h2>
+            <div class="featured-card fade-in" onclick="openArticle('tips-memilih-furniture-minimalis')">
+                <div class="featured-image-container">
+                    <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=500&fit=crop&crop=center" alt="Tips Memilih Furniture Minimalis" class="featured-image">
+                </div>
+                <div class="featured-content">
+                    <span class="featured-category">Tips & Panduan</span>
+                    <h3 class="featured-article-title">Panduan Lengkap Memilih Furniture Minimalis untuk Rumah Modern</h3>
+                    <p class="featured-excerpt">
+                        Temukan rahasia memilih furniture minimalis yang tepat untuk menciptakan rumah modern yang nyaman dan fungsional. Dari pemilihan warna hingga material, pelajari semua tips dari para ahli interior design.
+                    </p>
+                    <div class="featured-meta">
+                        <div class="featured-author">
+                            <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" alt="Sarah Wijaya" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Sarah Wijaya</h4>
+                                <span>Interior Designer • 15 Januari 2024</span>
+                            </div>
+                        </div>
+                        <span class="read-time">8 menit baca</span>
+                    </div>
+                    <a href="DetailArtikel.html" class="read-more-btn">
+                        Baca Selengkapnya
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Article 1 -->
+            <article class="article-card fade-in" data-category="tren-inspirasi" onclick="openArticle('tren-furniture-2024')">
+                <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=200&fit=crop" alt="Tren Furniture 2024" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Tren & Inspirasi</span>
+                    <h3 class="article-title">Tren Furniture 2024: Sustainable Living</h3>
+                    <p class="article-excerpt">
+                        Mengapa furniture ramah lingkungan menjadi pilihan utama konsumen modern dan bagaimana TheMar berkontribusi dalam gerakan sustainable living.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-author">Dr. Sari Furniture Expert • 10 Januari 2024</span>
+                        <span class="article-read-time">7 menit</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card fade-in" data-category="perawatan" onclick="openArticle('perawatan-furniture-kayu')">
+                <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
+                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=200&fit=crop" alt="Perawatan Furniture Kayu" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Perawatan</span>
+                    <h3 class="article-title">Cara Merawat Furniture Kayu Jati Agar Awet</h3>
+                    <p class="article-excerpt">
+                        Tips dan trik merawat furniture kayu jati agar tetap indah dan tahan lama. Panduan lengkap dari pembersihan hingga perawatan berkala.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-author">Ahmad Furniture Care • 8 Januari 2024</span>
+                        <span class="article-read-time">6 menit</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card fade-in" data-category="interior-design" onclick="openArticle('menata-ruang-kerja')">
+                <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
+                <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=400&h=200&fit=crop" alt="Interior Design Modern" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Interior Design</span>
+                    <h3 class="article-title">Menata Ruang Kerja di Rumah yang Produktif</h3>
+                    <p class="article-excerpt">
+                        Panduan mendesain home office yang nyaman dan produktif dengan pemilihan furniture yang tepat untuk work from home yang optimal.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-author">Lisa Interior Designer • 5 Januari 2024</span>
+                        <span class="article-read-time">8 menit</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card fade-in" data-category="tips-panduan" onclick="openArticle('memilih-sofa-yang-tepat')">
+                <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
+                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=200&fit=crop" alt="Tips Memilih Sofa" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Tips & Panduan</span>
+                    <h3 class="article-title">5 Tips Memilih Sofa yang Tepat untuk Ruang Tamu</h3>
+                    <p class="article-excerpt">
+                        Panduan praktis memilih sofa yang sesuai dengan ukuran ruangan, gaya hidup, dan budget Anda. Termasuk tips perawatan dan pemeliharaan.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-author">Maya Putri • 3 Januari 2024</span>
+                        <span class="article-read-time">5 menit</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card fade-in" data-category="diy" onclick="openArticle('diy-dekorasi-rumah')">
+                <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
+                <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=400&h=200&fit=crop" alt="DIY Dekorasi" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">DIY</span>
+                    <h3 class="article-title">DIY: Dekorasi Rumah dengan Budget Terbatas</h3>
+                    <p class="article-excerpt">
+                        Ide kreatif dan mudah untuk mendekorasi rumah tanpa menguras kantong. Proyek DIY yang bisa dilakukan di akhir pekan.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-author">Andi Rahman • 1 Januari 2024</span>
+                        <span class="article-read-time">10 menit</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="article-card fade-in" data-category="tren-inspirasi" onclick="openArticle('warna-furniture-2024')">
+                <!-- GANTI URL GAMBAR INI DENGAN GAMBAR ASLI ANDA -->
+                <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=400&h=200&fit=crop" alt="Warna Furniture 2024" class="article-image">
+                <div class="article-content">
+                    <span class="article-category">Tren & Inspirasi</span>
+                    <h3 class="article-title">Palet Warna Furniture Terpopuler di 2024</h3>
+                    <p class="article-excerpt">
+                        Eksplorasi warna-warna yang sedang trending untuk furniture rumah modern. Dari earth tone hingga bold colors yang mencuri perhatian.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-author">Color Expert Team • 28 Desember 2023</span>
+                        <span class="article-read-time">6 menit</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="pagination-btn" id="prevBtn">‹ Sebelumnya</a>
+            <a href="#" class="pagination-btn active">1</a>
+            <a href="#" class="pagination-btn">2</a>
+            <a href="#" class="pagination-btn">3</a>
+            <a href="#" class="pagination-btn" id="nextBtn">Selanjutnya ›</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">TheMar</div>
+                    <p class="footer-description">
+                        TheMar adalah destinasi terpercaya untuk furniture berkualitas tinggi dengan desain modern dan minimalis untuk melengkapi ruangan impian Anda.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="LandingPage.html">Home</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="ProductPage.html">Produk</a></li>
+                        <li><a href="Artikel.html">Artikel</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kategori Produk</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Ruang Tamu</a></li>
+                        <li><a href="#">Ruang Makan</a></li>
+                        <li><a href="#">Kamar Tidur</a></li>
+                        <li><a href="#">Ruang Kerja</a></li>
+                        <li><a href="#">Dapur</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kontak Kami</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Jl. Merdeka No. 123, Jakarta Pusat 10110</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+62 21 1234 5678</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@themar.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h4>Berlangganan Newsletter</h4>
+                        <form class="newsletter-form" id="newsletter-form-footer">
+                            <input type="email" placeholder="Email Anda" required>
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TheMar. Semua hak cipta dilindungi.</p>
+                <div class="payment-methods">
+                    <span>Metode Pembayaran:</span>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span class="payment-method">VISA</span>
+                        <span class="payment-method">MasterCard</span>
+                        <span class="payment-method">BCA</span>
+                        <span class="payment-method">OVO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/Artikel.js"></script>
+    <script src="../js/Header-footer.js"></script>
+</body>
+</html>

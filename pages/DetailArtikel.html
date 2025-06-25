@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Lengkap Memilih Furniture Minimalis - TheMar</title>
+    <meta name="description" content="Temukan rahasia memilih furniture minimalis yang tepat untuk menciptakan rumah modern yang nyaman dan fungsional.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files in correct order -->
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/Header-footer.css">
+    <link rel="stylesheet" href="../css/DetailArtikel.css">
+</head>
+<body>
+    <!-- Main Header -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Tombol menu mobile di paling kiri -->
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Logo setelah tombol menu -->
+            <a href="LandingPage.html" class="logo">TheMar</a>
+            
+            <!-- Kolom pencarian setelah logo -->
+            <div class="search-container">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Cari artikel..." id="searchInput">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            
+            <!-- Navigasi utama (akan disembunyikan di mobile oleh CSS) -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="LandingPage.html">Home</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li class="has-dropdown">
+                        <a href="ProductPage.html" class="dropdown-toggle">Product <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ProductPage.html">Daftar Product</a></li>
+                            <li><a href="Keranjang.html">Keranjang</a></li>
+                            <li><a href="HistoryPembayaran.html">History Pembayaran</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Artikel.html" >Artikel</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Ikon keranjang dan akun di paling kanan -->
+            <div class="icon-container">
+                <div class="cart-icon" id="cartIcon" onclick="window.location.href='Keranjang.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count" class="cart-count">3</span>
+                </div>
+
+                <div class="account-icon" id="accountIcon" onclick="window.location.href='AdminDashboard.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="LandingPage.html">Home</a>
+            <span>›</span>
+            <a href="Artikel.html">Artikel</a>
+            <span>›</span>
+            <span>Tips & Panduan</span>
+            <span>›</span>
+            <span>Panduan Memilih Furniture Minimalis</span>
+        </div>
+
+        <!-- Article Header -->
+        <header class="article-header fade-in">
+            <span class="article-category">Tips & Panduan</span>
+            <h1 class="article-title">Panduan Lengkap Memilih Furniture Minimalis untuk Rumah Modern</h1>
+            <p class="article-excerpt">
+                Temukan rahasia memilih furniture minimalis yang tepat untuk menciptakan rumah modern yang nyaman dan fungsional. Dari pemilihan warna hingga material, pelajari semua tips dari para ahli interior design.
+            </p>
+            
+            <div class="article-meta">
+                <div class="author-info">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Sarah Wijaya" class="author-avatar">
+                    <div class="author-details">
+                        <h4>Sarah Wijaya</h4>
+                        <span>Interior Designer • 15 Januari 2024</span>
+                    </div>
+                </div>
+                
+                <div class="article-stats">
+                    <div class="stat-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12,6 12,12 16,14"></polyline>
+                        </svg>
+                        <span>8 menit baca</span>
+                    </div>
+                    <div class="stat-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>1,234 views</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Image -->
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=400&fit=crop" alt="Furniture Minimalis Modern" class="featured-image fade-in">
+
+        <!-- Table of Contents -->
+        <div class="table-of-contents fade-in">
+            <h4>Daftar Isi</h4>
+            <ul>
+                <li><a href="#pengertian-minimalis">1. Pengertian Furniture Minimalis</a></li>
+                <li><a href="#prinsip-dasar">2. Prinsip Dasar Desain Minimalis</a></li>
+                <li><a href="#tips-memilih">3. Tips Memilih Furniture Minimalis</a></li>
+                <li><a href="#material-terbaik">4. Material Terbaik untuk Furniture Minimalis</a></li>
+                <li><a href="#warna-dan-finishing">5. Warna dan Finishing yang Tepat</a></li>
+                <li><a href="#kesalahan-umum">6. Kesalahan Umum yang Harus Dihindari</a></li>
+            </ul>
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <p>Furniture minimalis telah menjadi pilihan utama bagi banyak orang yang menginginkan rumah yang bersih, rapi, dan fungsional. Gaya ini tidak hanya tentang estetika, tetapi juga filosofi hidup yang mengutamakan <span class="highlight">kesederhanaan dan fungsionalitas</span>.</p>
+
+            <p>Dalam panduan lengkap ini, kita akan membahas segala hal yang perlu Anda ketahui tentang memilih furniture minimalis yang tepat untuk rumah modern Anda. Mulai dari prinsip dasar hingga tips praktis yang bisa langsung diterapkan.</p>
+
+            <h2 id="pengertian-minimalis">1. Pengertian Furniture Minimalis</h2>
+            
+            <p>Furniture minimalis adalah gaya desain yang mengutamakan kesederhanaan, fungsionalitas, dan keindahan dalam bentuk yang paling murni. Konsep ini berasal dari filosofi "less is more" yang dipopulerkan oleh arsitek Ludwig Mies van der Rohe.</p>
+
+            <blockquote>
+                "Minimalism is not a lack of something. It's simply the perfect amount of something." - Nicholas Burroughs
+            </blockquote>
+
+            <p>Karakteristik utama furniture minimalis meliputi:</p>
+            <ul>
+                <li><strong>Garis yang bersih dan sederhana</strong> - Tanpa ornamen berlebihan</li>
+                <li><strong>Fungsionalitas tinggi</strong> - Setiap elemen memiliki tujuan yang jelas</li>
+                <li><strong>Warna netral</strong> - Dominasi putih, abu-abu, hitam, dan earth tone</li>
+                <li><strong>Material berkualitas</strong> - Fokus pada kualitas daripada kuantitas</li>
+                <li><strong>Ruang terbuka</strong> - Memberikan kesan luas dan lapang</li>
+            </ul>
+
+            <h2 id="prinsip-dasar">2. Prinsip Dasar Desain Minimalis</h2>
+            
+            <p>Sebelum memilih furniture minimalis, penting untuk memahami prinsip-prinsip dasar yang menjadi fondasi gaya ini:</p>
+
+            <h3>Prinsip "Less is More"</h3>
+            <p>Konsep ini mengajarkan kita untuk memilih furniture yang benar-benar dibutuhkan. Setiap piece furniture harus memiliki fungsi yang jelas dan berkontribusi pada keseluruhan desain ruangan.</p>
+
+            <h3>Fungsionalitas di Atas Segalanya</h3>
+            <p>Furniture minimalis harus mampu memenuhi kebutuhan sehari-hari dengan efisien. Pilih furniture yang memiliki fungsi ganda atau storage tersembunyi untuk memaksimalkan ruang.</p>
+
+            <div class="tips-box">
+                <h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11H1v3h8v3l3-4-3-4v2z"></path>
+                        <path d="M22 12h-6"></path>
+                    </svg>
+                    Tips Pro
+                </h4>
+                <ul>
+                    <li>Buat daftar kebutuhan furniture yang benar-benar esensial</li>
+                    <li>Prioritaskan furniture multifungsi</li>
+                    <li>Pertimbangkan skala ruangan sebelum membeli</li>
+                    <li>Investasi pada kualitas daripada kuantitas</li>
+                </ul>
+            </div>
+
+            <h2 id="tips-memilih">3. Tips Memilih Furniture Minimalis</h2>
+
+            <h3>Ukuran dan Proporsi</h3>
+            <p>Memilih ukuran furniture yang tepat adalah kunci sukses desain minimalis. Furniture yang terlalu besar akan membuat ruangan terasa sesak, sementara yang terlalu kecil akan terlihat tidak proporsional.</p>
+
+            <p>Berikut panduan ukuran untuk berbagai jenis furniture:</p>
+
+            <h4>Sofa dan Kursi</h4>
+            <ul>
+                <li>Untuk ruang tamu kecil (&lt; 20m²): Pilih sofa 2-seater atau loveseat</li>
+                <li>Untuk ruang tamu sedang (20-30m²): Sofa 3-seater atau sectional kecil</li>
+                <li>Untuk ruang tamu besar (&gt; 30m²): Sectional atau kombinasi sofa + armchair</li>
+            </ul>
+
+            <h4>Meja dan Storage</h4>
+            <ul>
+                <li>Coffee table: 2/3 dari panjang sofa</li>
+                <li>Dining table: Minimal 60cm per orang</li>
+                <li>Storage: Pilih yang tinggi untuk mengoptimalkan ruang vertikal</li>
+            </ul>
+
+            <h3>Bentuk dan Garis Desain</h3>
+            <p>Furniture minimalis umumnya memiliki bentuk geometris yang sederhana. Hindari ornamen berlebihan dan pilih furniture dengan garis yang bersih dan tegas.</p>
+
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=400&fit=crop" alt="Contoh furniture minimalis dengan garis bersih">
+
+            <h2 id="material-terbaik">4. Material Terbaik untuk Furniture Minimalis</h2>
+
+            <p>Pemilihan material yang tepat akan menentukan durabilitas dan estetika furniture minimalis Anda. Berikut adalah material terbaik yang direkomendasikan:</p>
+
+            <h3>Kayu Solid</h3>
+            <p>Kayu solid seperti jati, mahoni, atau oak memberikan kesan natural dan hangat. Material ini sangat cocok untuk furniture minimalis karena memiliki grain yang indah tanpa perlu finishing berlebihan.</p>
+
+            <h3>Metal dan Besi</h3>
+            <p>Frame metal memberikan kesan modern dan industrial. Pilih finishing powder coating atau stainless steel untuk durabilitas maksimal.</p>
+
+            <h3>Kaca dan Acrylic</h3>
+            <p>Material transparan ini memberikan kesan ringan dan tidak memakan ruang visual. Sangat cocok untuk coffee table atau accent furniture.</p>
+
+            <div class="warning-box">
+                <h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    Perhatian
+                </h4>
+                <p>Hindari material dengan tekstur atau pattern yang terlalu ramai. Ini akan bertentangan dengan prinsip minimalis dan membuat ruangan terlihat cluttered.</p>
+            </div>
+
+            <h2 id="warna-dan-finishing">5. Warna dan Finishing yang Tepat</h2>
+
+            <p>Palet warna minimalis umumnya terdiri dari warna-warna netral yang memberikan kesan tenang dan timeless. Berikut panduan pemilihan warna:</p>
+
+            <h3>Warna Dasar</h3>
+            <ul>
+                <li><strong>Putih</strong> - Memberikan kesan bersih dan luas</li>
+                <li><strong>Abu-abu</strong> - Sophisticated dan mudah dipadukan</li>
+                <li><strong>Hitam</strong> - Memberikan kontras dan kesan elegan</li>
+                <li><strong>Beige/Cream</strong> - Hangat namun tetap netral</li>
+            </ul>
+
+            <h3>Accent Colors</h3>
+            <p>Untuk menghindari kesan monoton, Anda bisa menambahkan accent color dalam jumlah terbatas:</p>
+            <ul>
+                <li>Earth tone (coklat, terracotta)</li>
+                <li>Navy blue</li>
+                <li>Forest green</li>
+                <li>Mustard yellow</li>
+            </ul>
+
+            <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&h=400&fit=crop" alt="Palet warna minimalis">
+
+            <h2 id="kesalahan-umum">6. Kesalahan Umum yang Harus Dihindari</h2>
+
+            <p>Dalam perjalanan menciptakan rumah minimalis, ada beberapa kesalahan umum yang sering terjadi:</p>
+
+            <h3>Terlalu Steril</h3>
+            <p>Minimalis bukan berarti tanpa karakter. Tambahkan elemen personal seperti artwork, tanaman, atau tekstil untuk memberikan kehangatan.</p>
+
+            <h3>Mengabaikan Kenyamanan</h3>
+            <p>Jangan mengorbankan kenyamanan demi estetika. Pastikan furniture yang dipilih tetap nyaman untuk digunakan sehari-hari.</p>
+
+            <h3>Tidak Mempertimbangkan Pencahayaan</h3>
+            <p>Pencahayaan yang tepat sangat penting dalam desain minimalis. Kombinasikan natural light dengan artificial lighting yang strategis.</p>
+
+            <h3>Membeli Impulsif</h3>
+            <p>Rencanakan dengan matang sebelum membeli. Setiap furniture harus memiliki tempat dan fungsi yang jelas dalam overall design.</p>
+
+            <blockquote>
+                "The secret to happiness, you see, is not found in seeking more, but in developing the capacity to enjoy less." - Socrates
+            </blockquote>
+
+            <h2>Kesimpulan</h2>
+
+            <p>Memilih furniture minimalis yang tepat membutuhkan perencanaan yang matang dan pemahaman yang mendalam tentang prinsip-prinsip desain minimalis. Ingatlah bahwa minimalis bukan tentang memiliki sedikit barang, tetapi tentang memiliki barang yang tepat.</p>
+
+            <p>Dengan mengikuti panduan ini, Anda akan dapat menciptakan rumah minimalis yang tidak hanya indah dipandang, tetapi juga fungsional dan nyaman untuk ditinggali. Investasi pada furniture berkualitas tinggi akan memberikan nilai jangka panjang dan kepuasan yang berkelanjutan.</p>
+
+            <p>Selamat mendekorasi rumah impian Anda!</p>
+        </div>
+
+        <!-- Social Share -->
+        <div class="social-share fade-in">
+            <h4>Bagikan Artikel Ini</h4>
+            <div class="share-buttons">
+                <a href="#" class="share-btn facebook" onclick="shareToFacebook()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                    Facebook
+                </a>
+                <a href="#" class="share-btn twitter" onclick="shareToTwitter()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                    Twitter
+                </a>
+                <a href="#" class="share-btn whatsapp" onclick="shareToWhatsApp()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    WhatsApp
+                </a>
+                <button class="share-btn copy" onclick="copyLink()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                    Salin Link
+                </button>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <section class="related-articles fade-in">
+            <h3>Artikel Terkait</h3>
+            <div class="related-grid">
+                <div class="related-card" onclick="openArticle('tren-furniture-2024')">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=150&fit=crop" alt="Tren Furniture 2024" class="related-image">
+                    <div class="related-content">
+                        <span class="related-category">Tren & Inspirasi</span>
+                        <h4 class="related-title">Tren Furniture 2024: Sustainable Living</h4>
+                        <p class="related-excerpt">Mengapa furniture ramah lingkungan menjadi pilihan utama konsumen modern...</p>
+                    </div>
+                </div>
+
+                <div class="related-card" onclick="openArticle('perawatan-furniture-kayu')">
+                    <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=150&fit=crop" alt="Perawatan Furniture Kayu" class="related-image">
+                    <div class="related-content">
+                        <span class="related-category">Perawatan</span>
+                        <h4 class="related-title">Cara Merawat Furniture Kayu Jati Agar Awet</h4>
+                        <p class="related-excerpt">Tips dan trik merawat furniture kayu jati agar tetap indah dan tahan lama...</p>
+                    </div>
+                </div>
+
+                <div class="related-card" onclick="openArticle('menata-ruang-kerja')">
+                    <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=400&h=150&fit=crop" alt="Menata Ruang Kerja" class="related-image">
+                    <div class="related-content">
+                        <span class="related-category">Interior Design</span>
+                        <h4 class="related-title">Menata Ruang Kerja di Rumah yang Produktif</h4>
+                        <p class="related-excerpt">Panduan mendesain home office yang nyaman dan produktif...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">TheMar</div>
+                    <p class="footer-description">
+                        TheMar adalah destinasi terpercaya untuk furniture berkualitas tinggi dengan desain modern dan minimalis untuk melengkapi ruangan impian Anda.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="LandingPage.html">Home</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="ProductPage.html">Produk</a></li>
+                        <li><a href="Artikel.html">Artikel</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kategori Produk</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Ruang Tamu</a></li>
+                        <li><a href="#">Ruang Makan</a></li>
+                        <li><a href="#">Kamar Tidur</a></li>
+                        <li><a href="#">Ruang Kerja</a></li>
+                        <li><a href="#">Dapur</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kontak Kami</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Jl. Merdeka No. 123, Jakarta Pusat 10110</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+62 21 1234 5678</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@themar.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h4>Berlangganan Newsletter</h4>
+                        <form class="newsletter-form" id="newsletter-form-footer">
+                            <input type="email" placeholder="Email Anda" id="footer-newsletter-email" name="email" required>
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TheMar. Semua hak cipta dilindungi.</p>
+                <div class="payment-methods">
+                    <span>Metode Pembayaran:</span>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span class="payment-method">VISA</span>
+                        <span class="payment-method">MasterCard</span>
+                        <span class="payment-method">BCA</span>
+                        <span class="payment-method">OVO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/DetailArtikel.js"></script>
+    <script src="../js/Header-footer.js"></script>
+</body>
+</html>

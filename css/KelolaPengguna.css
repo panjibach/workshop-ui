@@ -1,0 +1,830 @@
+/* User Management Specific Styles - Improved */
+@import url("./admin-common.css");
+
+/* Stats Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--shadow-lg);
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Filters */
+.content-filters {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.filters-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 300px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+  min-width: 150px;
+  color: var(--text-primary);
+}
+
+/* Users Table */
+.users-table-container {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden; /* Ensure content doesn't spill out */
+  overflow-x: auto; /* Allow horizontal scrolling for the table on larger screens/tablets */
+}
+
+.table-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.users-table th {
+  background: var(--surface-alt);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.users-table td {
+  font-size: 0.875rem;
+}
+
+.users-table tbody tr:hover {
+  background: var(--surface-alt);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.user-details h4 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.user-details span {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-active {
+  background: var(--success-light);
+  color: var(--success-dark);
+}
+
+.status-inactive {
+  background: var(--error-light);
+  color: var(--error-dark);
+}
+
+.status-pending {
+  background: var(--warning-light);
+  color: var(--warning-dark);
+}
+
+.status-delivered {
+  background: var(--success-light);
+  color: var(--success-dark);
+}
+
+.status-completed {
+  background: var(--success-light);
+  color: var(--success-dark);
+}
+
+.status-cancelled {
+  background: var(--error-light);
+  color: var(--error-dark);
+}
+
+.role-badge {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn.edit {
+  background: var(--info);
+  color: white;
+}
+
+.action-btn.delete {
+  background: var(--error);
+  color: white;
+}
+
+.action-btn.view {
+  background: var(--success);
+  color: white;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: var(--surface-alt);
+  color: var(--text-primary);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination-btn {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.pagination-btn:hover,
+.pagination-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Admin content padding for mobile */
+.admin-content {
+  padding: 1rem; /* Adjusted for better spacing */
+  overflow-x: hidden; /* Prevent horizontal scroll on the main content area */
+}
+
+/* Base Mobile Card Layout (for <640px) */
+@media (max-width: 640px) {
+  .users-table-container {
+    display: none; /* This hides the desktop table */
+  }
+
+  .user-cards {
+    display: block; /* This shows the mobile cards */
+    padding: 0.75rem; /* More generous padding */
+  }
+
+  .user-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px; /* Increased border-radius */
+    padding: 1rem; /* More generous padding */
+    margin-bottom: 1rem; /* Increased margin */
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Added subtle shadow */
+  }
+
+  .user-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Increased gap */
+    margin-bottom: 0.75rem; /* Increased margin */
+  }
+
+  .user-card-avatar {
+    width: 40px; /* Increased size */
+    height: 40px; /* Increased size */
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .user-card-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .user-card-info h4 {
+    font-size: 1rem; /* Increased font size */
+    font-weight: 600;
+    margin-bottom: 0.1rem; /* Adjusted margin */
+    line-height: 1.2; /* Adjusted line height */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user-card-info span {
+    font-size: 0.85rem; /* Increased font size */
+    color: var(--text-secondary);
+    line-height: 1.2; /* Adjusted line height */
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for fields */
+    gap: 0.75rem; /* Increased gap */
+    font-size: 0.85rem; /* Increased font size */
+    margin-bottom: 1rem; /* Increased margin */
+  }
+
+  .user-card-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem; /* Adjusted gap */
+    min-width: 0;
+  }
+
+  .user-card-label {
+    color: var(--text-secondary);
+    font-size: 0.8rem; /* Increased font size */
+    font-weight: 500;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user-card-value {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem; /* Increased font size */
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user-card-actions {
+    display: flex;
+    gap: 0.5rem; /* Increased gap */
+  }
+
+  .user-card-actions .action-btn {
+    flex: 1;
+    padding: 0.5rem; /* Adjusted padding */
+    font-size: 0;
+    min-height: 36px; /* Ensured touch target size */
+    max-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user-card-actions .action-btn svg {
+    width: 18px; /* Increased icon size */
+    height: 18px; /* Increased icon size */
+  }
+}
+
+/* Tablet < 768px */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem; /* Increased gap */
+  }
+
+  .stat-card {
+    padding: 1rem; /* Increased padding */
+  }
+
+  .stat-value {
+    font-size: 1.2rem; /* Increased font size */
+    margin-bottom: 0.25rem; /* Adjusted margin */
+  }
+
+  .stat-label {
+    font-size: 0.75rem; /* Increased font size */
+  }
+
+  .content-filters {
+    padding: 1rem; /* Increased padding */
+    margin-bottom: 1rem; /* Increased margin */
+  }
+
+  .filters-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem; /* Increased gap */
+  }
+
+  .search-input,
+  .filter-select {
+    padding: 0.6rem 0.8rem; /* Increased padding */
+    font-size: 0.8rem; /* Increased font size */
+    min-width: auto;
+  }
+
+  .users-table-container {
+    display: block; /* Explicitly show table on tablets */
+    margin-bottom: 1rem; /* Increased margin */
+    overflow-x: auto; /* Allow horizontal scrolling for the table */
+  }
+
+  .user-cards {
+    display: none; /* Hide cards on tablets */
+  }
+
+  .table-header {
+    padding: 1rem; /* Increased padding */
+  }
+
+  .table-title {
+    font-size: 1.2rem; /* Increased font size */
+  }
+
+  .table-header span {
+    font-size: 0.75rem; /* Increased font size */
+  }
+
+  .users-table {
+    font-size: 0.75rem; /* Increased font size */
+    table-layout: auto; /* Allow columns to size based on content */
+    min-width: 600px; /* Ensure a minimum width for horizontal scrolling */
+  }
+
+  .users-table th,
+  .users-table td {
+    padding: 0.6rem 0.4rem; /* Increased padding for better spacing */
+    white-space: normal; /* Allow text to wrap */
+    word-break: break-word; /* Break long words */
+  }
+
+  /* Adjusted column widths for better distribution on tablets */
+  .users-table th:nth-child(1) {
+    width: 30%;
+  } /* Name/Email */
+  .users-table th:nth-child(2) {
+    width: 15%;
+  } /* Status */
+  .users-table th:nth-child(3) {
+    width: 15%;
+  } /* Role */
+  .users-table th:nth-child(4) {
+    width: 15%;
+  } /* Joined */
+  .users-table th:nth-child(5) {
+    width: 15%;
+  } /* Last Login */
+  .users-table th:nth-child(6) {
+    width: 10%;
+  } /* Orders */
+  .users-table th:nth-child(7) {
+    width: 10%;
+  } /* Actions */
+
+  .user-info {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem; /* Increased gap */
+    min-width: 0;
+  }
+
+  .user-avatar {
+    width: 24px; /* Increased size */
+    height: 24px; /* Increased size */
+    flex-shrink: 0;
+  }
+
+  .user-details {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .user-details h4 {
+    font-size: 0.75rem; /* Increased font size */
+    margin-bottom: 0.05rem; /* Adjusted margin */
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user-details span {
+    font-size: 0.65rem; /* Increased font size */
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .status-badge,
+  .role-badge {
+    padding: 0.15rem 0.5rem; /* Increased padding */
+    font-size: 0.65rem; /* Increased font size */
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .actions-cell {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem; /* Increased gap */
+    justify-content: center;
+  }
+
+  .action-btn {
+    padding: 0.4rem; /* Increased padding */
+    font-size: 0;
+    min-width: 32px; /* Ensured touch target size */
+    height: 32px; /* Ensured touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .action-btn svg {
+    width: 16px; /* Increased icon size */
+    height: 16px; /* Increased icon size */
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem; /* Increased gap */
+  }
+
+  .modal-content {
+    padding: 1.5rem; /* Increased padding */
+    margin: 1rem; /* Adjusted margin */
+  }
+
+  .modal-title {
+    font-size: 1.2rem; /* Increased font size */
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 0.5rem; /* Increased gap */
+  }
+
+  .pagination {
+    margin-top: 1rem; /* Increased margin */
+  }
+
+  .pagination-btn {
+    padding: 0.5rem 0.8rem; /* Increased padding */
+    font-size: 0.75rem; /* Increased font size */
+  }
+}
+
+/* Small Phones < 480px */
+@media (max-width: 480px) {
+  .admin-content {
+    padding: 0.5rem; /* Reduced padding for very small screens */
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem; /* Increased gap */
+  }
+
+  .stat-card {
+    padding: 0.75rem; /* Increased padding */
+  }
+
+  .stat-value {
+    font-size: 1rem; /* Increased font size */
+  }
+
+  .stat-label {
+    font-size: 0.65rem; /* Increased font size */
+  }
+
+  .content-filters {
+    padding: 0.75rem; /* Increased padding */
+  }
+
+  .table-header {
+    padding: 0.75rem; /* Increased padding */
+  }
+
+  .table-title {
+    font-size: 1rem; /* Increased font size */
+  }
+
+  .table-header span {
+    font-size: 0.7rem; /* Increased font size */
+  }
+
+  /* Card layout optimizations for very small screens */
+  .user-cards {
+    padding: 0.5rem;
+  }
+
+  .user-card {
+    padding: 0.75rem; /* Increased padding */
+    margin-bottom: 0.75rem; /* Increased margin */
+  }
+
+  .user-card-header {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .user-card-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .user-card-info h4 {
+    font-size: 0.9rem;
+  }
+
+  .user-card-info span {
+    font-size: 0.75rem;
+  }
+
+  .user-card-body {
+    grid-template-columns: 1fr; /* Single column for fields on very small screens */
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .user-card-label {
+    font-size: 0.7rem;
+  }
+
+  .user-card-value {
+    font-size: 0.8rem;
+  }
+
+  .user-card-actions {
+    gap: 0.25rem;
+  }
+
+  .user-card-actions .action-btn {
+    padding: 0.4rem; /* Adjusted padding */
+    min-height: 32px; /* Ensured touch target size */
+    max-height: 32px;
+  }
+
+  .user-card-actions .action-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .status-badge,
+  .role-badge {
+    padding: 0.1rem 0.4rem; /* Increased padding */
+    font-size: 0.6rem; /* Increased font size */
+  }
+}
+
+/* Ultra-compact mode for very small screens */
+@media (max-width: 360px) {
+  .admin-content {
+    padding: 0.25rem; /* Adjusted padding */
+  }
+
+  .user-card {
+    padding: 0.4rem; /* Adjusted padding */
+    margin-bottom: 0.4rem; /* Adjusted margin */
+  }
+
+  .user-card-header {
+    gap: 0.2rem; /* Adjusted gap */
+    margin-bottom: 0.2rem; /* Adjusted margin */
+  }
+
+  .user-card-avatar {
+    width: 28px; /* Adjusted size */
+    height: 28px; /* Adjusted size */
+  }
+
+  .user-card-info h4 {
+    font-size: 0.8rem; /* Adjusted font size */
+  }
+
+  .user-card-info span {
+    font-size: 0.65rem; /* Adjusted font size */
+  }
+
+  .user-card-body {
+    gap: 0.2rem; /* Adjusted gap */
+    margin-bottom: 0.4rem; /* Adjusted margin */
+  }
+
+  .user-card-label {
+    font-size: 0.65rem; /* Adjusted font size */
+  }
+
+  .user-card-value {
+    font-size: 0.75rem; /* Adjusted font size */
+  }
+
+  .user-card-actions {
+    gap: 0.15rem; /* Adjusted gap */
+  }
+
+  .user-card-actions .action-btn {
+    padding: 0.2rem; /* Adjusted padding */
+    min-height: 28px; /* Adjusted min-height */
+  }
+
+  .user-card-actions .action-btn svg {
+    width: 14px; /* Adjusted icon size */
+    height: 14px; /* Adjusted icon size */
+  }
+
+  .table-header {
+    padding: 0.5rem; /* Adjusted padding */
+  }
+
+  .table-title {
+    font-size: 0.8rem; /* Adjusted font size */
+  }
+
+  .table-header span {
+    font-size: 0.6rem; /* Adjusted font size */
+  }
+}

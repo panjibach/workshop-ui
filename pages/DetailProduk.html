@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - TheMar</title>
+    <meta name="description" content="Detail produk furniture berkualitas tinggi dari TheMar"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/DetailProduk.css">
+    <link rel="stylesheet" href="../css/Header-footer.css">
+</head>
+<body>
+    <!-- Main Header -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Tombol menu mobile di paling kiri -->
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Logo setelah tombol menu -->
+            <a href="LandingPage.html" class="logo">TheMar</a>
+            
+            <!-- Kolom pencarian setelah logo -->
+            <div class="search-container">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Cari artikel..." id="searchInput">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            
+            <!-- Navigasi utama (akan disembunyikan di mobile oleh CSS) -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="LandingPage.html">Home</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li class="has-dropdown">
+                        <a href="ProductPage.html" class="dropdown-toggle">Product <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ProductPage.html">Daftar Product</a></li>
+                            <li><a href="Keranjang.html">Keranjang</a></li>
+                            <li><a href="HistoryPembayaran.html">History Pembayaran</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Artikel.html" >Artikel</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Ikon keranjang dan akun di paling kanan -->
+            <div class="icon-container">
+                <div class="cart-icon" id="cartIcon" onclick="window.location.href='Keranjang.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count" class="cart-count">3</span>
+                </div>
+
+                <div class="account-icon" id="accountIcon" onclick="window.location.href='AdminDashboard.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Product Detail Container -->
+    <div class="product-detail-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <a href="products.html">Shop</a>
+            <span>›</span>
+            <a href="products.html">Lemari</a>
+            <span>›</span>
+            <span>Lemari Pakaian Multifungsi</span>
+        </div>
+
+        <div class="product-detail">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=600&fit=crop" alt="Lemari Pakaian Multifungsi" id="mainImage">
+                </div>
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail active" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=100&h=100&fit=crop" alt="View 1">
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1549497538-303791108f95?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=100&h=100&fit=crop" alt="View 2">
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=100&h=100&fit=crop" alt="View 3">
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage(this, 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=100&h=100&fit=crop" alt="View 4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <div class="product-badges">
+                    <span class="badge new">New Arrival</span>
+                    <span class="badge bestseller">Best Seller</span>
+                </div>
+
+                <h1 class="product-title">Lemari Pakaian Multifungsi</h1>
+                
+                <div class="product-rating">
+                    <div class="stars">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                    </div>
+                    <span class="rating-text">4.7 (73 ulasan)</span>
+                    <a href="#reviews" class="view-reviews">Lihat Ulasan</a>
+                </div>
+
+                <div class="product-price">
+                    <span class="current-price">Rp 6.500.000</span>
+                    <span class="original-price">Rp 7.200.000</span>
+                    <span class="discount">10% OFF</span>
+                </div>
+
+                <div class="product-description">
+                    <p>Lemari pakaian multifungsi dengan desain modern dan minimalis. Dilengkapi dengan berbagai kompartemen untuk menyimpan pakaian, sepatu, dan aksesoris lainnya. Terbuat dari bahan berkualitas tinggi yang tahan lama dan mudah perawatan.</p>
+                </div>
+
+                <!-- Product Options -->
+                <div class="product-options">
+                    <div class="option-group">
+                        <label>Warna:</label>
+                        <div class="color-options">
+                            <div class="color-option active" data-color="natural" style="background-color: #D4A574;" onclick="selectColor(this)"></div>
+                            <div class="color-option" data-color="white" style="background-color: #FFFFFF; border: 1px solid #ddd;" onclick="selectColor(this)"></div>
+                            <div class="color-option" data-color="dark" style="background-color: #3A3A3A;" onclick="selectColor(this)"></div>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <label>Ukuran:</label>
+                        <div class="size-options">
+                            <div class="size-option active" data-size="standard" onclick="selectSize(this)">Standard (200x120x60cm)</div>
+                            <div class="size-option" data-size="large" onclick="selectSize(this)">Large (220x140x65cm)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quantity and Actions -->
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="99" id="quantityInput">
+                        <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary add-to-cart" onclick="addToCart()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Tambah ke Keranjang
+                        </button>
+                        <button class="btn btn-secondary buy-now" onclick="buyNow()">
+                            Beli Sekarang
+                        </button>
+                    </div>
+
+                    <div class="wishlist-share">
+                        <button class="btn btn-outline wishlist-btn" onclick="toggleWishlist()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <button class="btn btn-outline share-btn" onclick="shareProduct()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Features -->
+                <div class="product-features">
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        <div>
+                            <h4>Pengiriman Gratis</h4>
+                            <p>Untuk pembelian di atas Rp 5.000.000</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <div>
+                            <h4>Garansi 5 Tahun</h4>
+                            <p>Garansi resmi untuk semua produk</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                        </svg>
+                        <div>
+                            <h4>Pemasangan Gratis</h4>
+                            <p>Tim profesional akan memasang di rumah Anda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="product-tabs">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="showTab('description')">Deskripsi</button>
+                <button class="tab-btn" onclick="showTab('specifications')">Spesifikasi</button>
+                <button class="tab-btn" onclick="showTab('reviews')">Ulasan (73)</button>
+                <button class="tab-btn" onclick="showTab('shipping')">Pengiriman</button>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-panel active" id="description">
+                    <h3>Deskripsi Produk</h3>
+                    <p>Lemari pakaian multifungsi ini dirancang khusus untuk memenuhi kebutuhan penyimpanan modern. Dengan desain yang elegan dan fungsional, lemari ini dapat menampung berbagai jenis pakaian dan aksesoris dengan rapi dan terorganisir.</p>
+                    
+                    <h4>Fitur Unggulan:</h4>
+                    <ul>
+                        <li>Kompartemen gantung untuk jas dan gaun</li>
+                        <li>Laci untuk pakaian dalam dan aksesoris kecil</li>
+                        <li>Rak sepatu yang dapat disesuaikan</li>
+                        <li>Ruang penyimpanan tambahan untuk tas dan aksesoris</li>
+                        <li>Sistem ventilasi untuk menjaga kelembaban</li>
+                        <li>Pintu dengan soft-close mechanism</li>
+                    </ul>
+
+                    <h4>Material Berkualitas:</h4>
+                    <p>Terbuat dari kayu engineered premium dengan finishing yang tahan lama. Semua hardware menggunakan material berkualitas tinggi yang tahan karat dan mudah perawatan.</p>
+                </div>
+
+                <div class="tab-panel" id="specifications">
+                    <h3>Spesifikasi Teknis</h3>
+                    <div class="spec-table">
+                        <div class="spec-row">
+                            <div class="spec-label">Dimensi (P x L x T)</div>
+                            <div class="spec-value">200cm x 120cm x 60cm</div>
+                        </div>
+                        <div class="spec-row">
+                            <div class="spec-label">Material Utama</div>
+                            <div class="spec-value">Kayu Engineered Premium</div>
+                        </div>
+                        <div class="spec-row">
+                            <div class="spec-label">Finishing</div>
+                            <div class="spec-value">Melamine dengan UV Protection</div>
+                        </div>
+                        <div class="spec-row">
+                            <div class="spec-label">Hardware</div>
+                            <div class="spec-value">Stainless Steel, Soft-Close</div>
+                        </div>
+                        <div class="spec-row">
+                            <div class="spec-label">Berat</div>
+                            <div class="spec-value">85 kg</div>
+                        </div>
+                        <div class="spec-row">
+                            <div class="spec-label">Kapasitas</div>
+                            <div class="spec-value">50-60 potong pakaian</div>
+                        </div>
+                        <div class="spec-row">
+                            <div class="spec-label">Garansi</div>
+                            <div class="spec-value">5 Tahun</div>
+                        </div>
+                        <div class="spec-row">
+                            <div class="spec-label">Sertifikasi</div>
+                            <div class="spec-value">ISO 9001, FSC Certified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="reviews">
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <div class="overall-rating">
+                                <span class="rating-number">4.7</span>
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <span class="total-reviews">73 ulasan</span>
+                            </div>
+                        </div>
+                        <div class="rating-breakdown">
+                            <div class="rating-bar">
+                                <span>5★</span>
+                                <div class="bar"><div class="fill" style="width: 68%"></div></div>
+                                <span>50</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>4★</span>
+                                <div class="bar"><div class="fill" style="width: 20%"></div></div>
+                                <span>15</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>3★</span>
+                                <div class="bar"><div class="fill" style="width: 8%"></div></div>
+                                <span>6</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>2★</span>
+                                <div class="bar"><div class="fill" style="width: 3%"></div></div>
+                                <span>2</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>1★</span>
+                                <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                <span>0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-list">
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">B</div>
+                                    <div>
+                                        <div class="reviewer-name">Budi Santoso</div>
+                                        <div class="review-date">15 Januari 2024</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p>Lemari yang sangat bagus! Kualitasnya premium dan desainnya elegan. Sangat cocok dengan interior kamar saya. Ruang penyimpanannya luas dan terorganisir dengan baik. Pemasangan juga dilakukan dengan profesional.</p>
+                            </div>
+                            <div class="review-images">
+                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=100&h=100&fit=crop" alt="Review image">
+                                <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=100&h=100&fit=crop" alt="Review image">
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">S</div>
+                                    <div>
+                                        <div class="reviewer-name">Siti Rahayu</div>
+                                        <div class="review-date">8 Januari 2024</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p>Saya suka desainnya, tapi perakitannya agak rumit. Untungnya customer service sangat membantu dan tim pemasangan sangat profesional. Secara keseluruhan, produk yang bagus dan sesuai ekspektasi.</p>
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">A</div>
+                                    <div>
+                                        <div class="reviewer-name">Ahmad Hidayat</div>
+                                        <div class="review-date">2 Januari 2024</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p>Kemasan yang aman dan pengiriman cepat. Kualitas lemari sangat baik dan sesuai dengan deskripsi. Sangat puas dengan pembelian ini. Recommended!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline load-more-reviews" onclick="loadMoreReviews()">Muat Lebih Banyak Ulasan</button>
+                </div>
+
+                <div class="tab-panel" id="shipping">
+                    <h3>Informasi Pengiriman</h3>
+                    
+                    <div class="shipping-info">
+                        <div class="shipping-option">
+                            <h4>Pengiriman Standar</h4>
+                            <p>Gratis untuk pembelian di atas Rp 5.000.000</p>
+                            <p>Estimasi: 7-14 hari kerja</p>
+                            <p>Area: Seluruh Indonesia</p>
+                        </div>
+
+                        <div class="shipping-option">
+                            <h4>Pengiriman Express</h4>
+                            <p>Biaya: Rp 500.000</p>
+                            <p>Estimasi: 3-5 hari kerja</p>
+                            <p>Area: Jabodetabek, Bandung, Surabaya</p>
+                        </div>
+
+                        <div class="shipping-option">
+                            <h4>Pemasangan Profesional</h4>
+                            <p>Gratis untuk area Jabodetabek</p>
+                            <p>Biaya: Rp 300.000 untuk area lainnya</p>
+                            <p>Termasuk: Perakitan dan penempatan</p>
+                        </div>
+                    </div>
+
+                    <div class="shipping-calculator">
+                        <h4>Cek Ongkos Kirim</h4>
+                        <div class="calculator-form">
+                            <input type="text" placeholder="Masukkan kode pos" id="postalCode">
+                            <button class="btn btn-primary" onclick="checkShipping()">Cek Ongkir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-products">
+            <h2>Produk Terkait</h2>
+            <div class="related-grid">
+                <div class="product-card" onclick="window.location.href='DetailProduk.html'">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=300&h=300&fit=crop" alt="Lemari Dapur Modular">
+                    </div>
+                    <h3>Lemari Dapur Modular</h3>
+                    <div class="price">Rp 8.200.000</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.8 (92)</span>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href='DetailProduk.html'">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&h=300&fit=crop" alt="Lemari Buku Minimalis">
+                    </div>
+                    <h3>Lemari Buku Minimalis</h3>
+                    <div class="price">Rp 4.800.000</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.6 (58)</span>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href='DetailProduk.html'">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?w=300&h=300&fit=crop" alt="Lemari Pajangan Kaca">
+                    </div>
+                    <h3>Lemari Pajangan Kaca</h3>
+                    <div class="price">Rp 9.500.000</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.9 (124)</span>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href='DetailProduk.html'">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&h=300&fit=crop" alt="Lemari TV Modern">
+                    </div>
+                    <h3>Lemari TV Modern</h3>
+                    <div class="price">Rp 5.500.000</div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.5 (67)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+        <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">TheMar</div>
+                    <p class="footer-description">
+                        TheMar adalah destinasi terpercaya untuk furniture berkualitas tinggi dengan desain modern dan minimalis untuk melengkapi ruangan impian Anda.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="LandingPage.html">Home</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="ProductPage.html">Produk</a></li>
+                        <li><a href="Artikel.html">Artikel</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kategori Produk</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Ruang Tamu</a></li>
+                        <li><a href="#">Ruang Makan</a></li>
+                        <li><a href="#">Kamar Tidur</a></li>
+                        <li><a href="#">Ruang Kerja</a></li>
+                        <li><a href="#">Dapur</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kontak Kami</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Jl. Merdeka No. 123, Jakarta Pusat 10110</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+62 21 1234 5678</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@themar.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h4>Berlangganan Newsletter</h4>
+                        <form class="newsletter-form" id="newsletter-form-footer">
+                            <input type="email" placeholder="Email Anda" required>
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TheMar. Semua hak cipta dilindungi.</p>
+                <div class="payment-methods">
+                    <span>Metode Pembayaran:</span>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span class="payment-method">VISA</span>
+                        <span class="payment-method">MasterCard</span>
+                        <span class="payment-method">BCA</span>
+                        <span class="payment-method">OVO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/DetailProduk.js"></script>
+    <script src="../js/Header-footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pembayaran - TheMar</title>
+    <meta name="description" content="Konfirmasi pembayaran berhasil - TheMar">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Header-footer.css">
+    <link rel="stylesheet" href="../css/KonfirmasiPembayaran.css">
+</head>
+<body>
+    <!-- Main Header -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Tombol menu mobile di paling kiri -->
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Logo setelah tombol menu -->
+            <a href="LandingPage.html" class="logo">TheMar</a>
+            
+            <!-- Kolom pencarian setelah logo -->
+            <div class="search-container">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Cari artikel..." id="searchInput">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            
+            <!-- Navigasi utama (akan disembunyikan di mobile oleh CSS) -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="LandingPage.html">Home</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li class="has-dropdown">
+                        <a href="ProductPage.html" class="dropdown-toggle">Product <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ProductPage.html">Daftar Product</a></li>
+                            <li><a href="Keranjang.html">Keranjang</a></li>
+                            <li><a href="HistoryPembayaran.html">History Pembayaran</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Artikel.html" >Artikel</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Ikon keranjang dan akun di paling kanan -->
+            <div class="icon-container">
+                <div class="cart-icon" id="cartIcon" onclick="window.location.href='Keranjang.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count" class="cart-count">3</span>
+                </div>
+
+                <div class="account-icon" id="accountIcon" onclick="window.location.href='AdminDashboard.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+    <!-- Confirmation Container -->
+    <div class="confirmation-container">
+        <!-- Success Animation -->
+        <div class="success-animation">
+            <div class="checkmark-circle">
+                <div class="checkmark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="success-title">Pembayaran Berhasil!</h1>
+            <p class="success-subtitle">Terima kasih atas pembelian Anda. Pesanan sedang diproses.</p>
+        </div>
+
+        <!-- Order Details -->
+        <div class="confirmation-content">
+            <div class="order-details-card">
+                <div class="card-header">
+                    <h2>Detail Pesanan</h2>
+                    <div class="order-number">
+                        <span class="label">No. Pesanan:</span>
+                        <span class="value" id="orderNumber">TM-2024-001234</span>
+                        <button class="copy-btn" onclick="copyOrderNumber()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Transaction Info -->
+                <div class="transaction-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Tanggal Transaksi</span>
+                            <span class="info-value" id="transactionDate">23 Januari 2024, 14:30 WIB</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Metode Pembayaran</span>
+                            <span class="info-value" id="paymentMethod">Transfer Bank - BCA</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status Pembayaran</span>
+                            <span class="info-value status-paid">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                                Lunas
+                            </span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status Pesanan</span>
+                            <span class="info-value status-processing">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                Sedang Diproses
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Purchased Items -->
+                <div class="purchased-items">
+                    <h3>Produk yang Dibeli</h3>
+                    <div class="items-list">
+                        <div class="item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=80&h=80&fit=crop" alt="Lemari Pakaian Multifungsi">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">Lemari Pakaian Multifungsi</div>
+                                <div class="item-specs">Kayu Jati • Warna Natural • 180x60x200 cm</div>
+                                <div class="item-qty">Qty: 1</div>
+                            </div>
+                            <div class="item-price">Rp 6.500.000</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=80&h=80&fit=crop" alt="Meja Kopi Marmer">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">Meja Kopi Marmer</div>
+                                <div class="item-specs">Marmer Carrara • Frame Besi • 120x60x45 cm</div>
+                                <div class="item-qty">Qty: 1</div>
+                            </div>
+                            <div class="item-price">Rp 7.800.000</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=80&h=80&fit=crop" alt="Kursi Ergonomis Premium">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">Kursi Ergonomis Premium</div>
+                                <div class="item-specs">Kulit Sintetis • Adjustable Height • Lumbar Support</div>
+                                <div class="item-qty">Qty: 1</div>
+                            </div>
+                            <div class="item-price">Rp 3.500.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Summary -->
+                <div class="payment-summary">
+                    <h3>Ringkasan Pembayaran</h3>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>Rp 17.800.000</span>
+                        </div>
+                        <div class="summary-row discount">
+                            <span>Diskon (NEWUSER10)</span>
+                            <span>-Rp 700.000</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Ongkos Kirim</span>
+                            <span>Gratis</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Pajak (11%)</span>
+                            <span>Rp 1.881.000</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Dibayar</span>
+                            <span>Rp 18.981.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Information -->
+                <div class="shipping-info">
+                    <h3>Informasi Pengiriman</h3>
+                    <div class="shipping-details">
+                        <div class="shipping-address">
+                            <div class="address-label">Alamat Pengiriman:</div>
+                            <div class="address-details">
+                                <div class="recipient-name">John Doe</div>
+                                <div class="recipient-phone">+62 812-3456-7890</div>
+                                <div class="recipient-address">
+                                    Jl. Sudirman No. 123, RT 01/RW 02<br>
+                                    Menteng, Jakarta Pusat 10310<br>
+                                    DKI Jakarta
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shipping-method">
+                            <div class="method-label">Metode Pengiriman:</div>
+                            <div class="method-details">
+                                <div class="method-name">Pengiriman Reguler</div>
+                                <div class="method-time">Estimasi: 7-14 hari kerja</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tracking Information -->
+                <div class="tracking-info">
+                    <h3>Informasi Pelacakan</h3>
+                    <div class="tracking-details">
+                        <div class="tracking-number">
+                            <span class="tracking-label">No. Resi:</span>
+                            <span class="tracking-value">Akan dikirim setelah pesanan diproses</span>
+                        </div>
+                        <div class="tracking-note">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4"></path>
+                                <path d="M12 8h.01"></path>
+                            </svg>
+                            <span>Nomor resi akan dikirim via email dan SMS setelah pesanan dikemas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="window.location.href='HistoryPembayaran.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v5h5"></path>
+                        <path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"></path>
+                        <path d="M12 7v5l4 2"></path>
+                    </svg>
+                    Lihat Histori Transaksi
+                </button>
+                <button class="btn btn-outline" onclick="downloadInvoice()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7,10 12,15 17,10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Invoice
+                </button>
+                <button class="btn btn-outline" onclick="window.location.href='ProductPage.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                    </svg>
+                    Lanjut Belanja
+                </button>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="next-steps">
+                <h3>Langkah Selanjutnya</h3>
+                <div class="steps-list">
+                    <div class="step-item completed">
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Pembayaran Berhasil</div>
+                            <div class="step-desc">Pembayaran Anda telah dikonfirmasi</div>
+                        </div>
+                    </div>
+                    <div class="step-item active">
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <path d="M16 8h4l3 3v5H19"></path>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Pesanan Sedang Diproses</div>
+                            <div class="step-desc">Tim kami sedang mempersiapkan pesanan Anda</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 16l2-2 4 4"></path>
+                                <circle cx="9" cy="9" r="8"></circle>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Pesanan Dikirim</div>
+                            <div class="step-desc">Anda akan menerima nomor resi untuk pelacakan</div>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Pesanan Diterima</div>
+                            <div class="step-desc">Furniture akan diantar ke alamat Anda</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Support -->
+            <div class="customer-support">
+                <h3>Butuh Bantuan?</h3>
+                <div class="support-options">
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="support-content">
+                            <div class="support-title">Hubungi Customer Service</div>
+                            <div class="support-desc">+62 21 1234 5678</div>
+                        </div>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="support-content">
+                            <div class="support-title">Email Support</div>
+                            <div class="support-desc">support@themar.com</div>
+                        </div>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="support-content">
+                            <div class="support-title">Live Chat</div>
+                            <div class="support-desc">Chat dengan tim support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">TheMar</div>
+                    <p class="footer-description">
+                        TheMar adalah destinasi terpercaya untuk furniture berkualitas tinggi dengan desain modern dan minimalis untuk melengkapi ruangan impian Anda.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="LandingPage.html">Home</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="ProductPage.html">Produk</a></li>
+                        <li><a href="Artikel.html">Artikel</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kategori Produk</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Ruang Tamu</a></li>
+                        <li><a href="#">Ruang Makan</a></li>
+                        <li><a href="#">Kamar Tidur</a></li>
+                        <li><a href="#">Ruang Kerja</a></li>
+                        <li><a href="#">Dapur</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kontak Kami</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Jl. Merdeka No. 123, Jakarta Pusat 10110</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+62 21 1234 5678</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@themar.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h4>Berlangganan Newsletter</h4>
+                        <form class="newsletter-form" id="newsletter-form-footer">
+                            <input type="email" placeholder="Email Anda" id="footer-newsletter-email" name="email" required>
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TheMar. Semua hak cipta dilindungi.</p>
+                <div class="payment-methods">
+                    <span>Metode Pembayaran:</span>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span class="payment-method">VISA</span>
+                        <span class="payment-method">MasterCard</span>
+                        <span class="payment-method">BCA</span>
+                        <span class="payment-method">OVO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/KonfirmasiPembayaran.js"></script>
+    <script src="../js/Header-footer.js"></script>
+</body>
+</html>

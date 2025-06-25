@@ -47,4 +47,4 @@
   - `KelolaTransaksi`
 
 ---## 📄 Lisensi
-Proyek ini dikembangkan untuk tujuan pembelajaran dan non-komersial. ##---
+Proyek ini dikembangkan untuk tujuan pembelajaran Untuk memenuhi tugas UAS. ##---

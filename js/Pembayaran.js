@@ -197,16 +197,10 @@ function processPayment() {
   const nameField = form.querySelector('input[name="name"]')
   const emailField = form.querySelector('input[name="email"]')
 
-  // Only check for name and email as minimum requirement
-  if (!nameField?.value.trim() && !emailField?.value.trim()) {
-    showNotification("Mohon isi minimal nama atau email untuk melanjutkan", "warning")
-    return
-  }
-
   // Show loading state
   const button = event.target
   const originalText = button.innerHTML
-  button.disabled = true
+  button.disabled = false
   button.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 12a9 9 0 11-6.219-8.56"></path>
